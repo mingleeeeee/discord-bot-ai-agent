@@ -5,7 +5,8 @@ const openai = new OpenAI({
 });
 
 export async function translateMessage(text: string, targetLanguage: string): Promise<string> {
-  const prompt = `Translate the following text to ${getLanguageName(targetLanguage)}: ${text}`;
+  const prompt = `You are a translation bot.\
+  Please translate the following: ${text} ,to ${getLanguageName(targetLanguage)}`;
 
   try {
     const response = await openai.chat.completions.create({

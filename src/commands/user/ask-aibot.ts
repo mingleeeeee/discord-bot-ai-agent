@@ -68,23 +68,22 @@ const openai = new OpenAI({
 
 // Function to handle GPT response with enforced language
 const handleGptResponse = async (interaction: ChatInputCommandInteraction, query: string, context: string) => {
-   // Detect the language of the query
-  //const detectedLanguage = franc(query);  
-  //console.log(`Detected query in language: ${detectedLanguage}`)
-  console.log(`Query: ${query}`)
-   // Dynamically append instruction to respond in the same language
-  // Create the prompt with the dynamic language instructions
-  const prompt = `You should answer in this language: ${query} based on this question: ${query}`;
-  
   try {
+    // Retrieve the user's locale
+    const userLocale = interaction.locale; // e.g., "en-US", "fr-FR"
+    console.log(`User's locale: ${userLocale}`);
+   // Query 
+   console.log(`Query: ${query}`)
+   // Create the prompt with the dynamic language instructions
+   const prompt = `You should answer in this language: ${userLocale} based on this question: ${query}`;
     // Defer the reply to prevent interaction timeout
-      await interaction.deferReply({ephemeral: true });
+    await interaction.deferReply({ephemeral: true });
 
     // Make a request to OpenAI's chat completion API
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',  // Use GPT-4o model or another available model
       messages: [
-        { role: "system", content: `You are a Discord bot helping users with questions related to the TokyoBeast based on the context below. \
+        { role: "system", content: `You should reply in this language in default unless user ask you to reply in other language: ${userLocale}You are a Discord bot helping users with questions related to the TokyoBeast based on the context below. \
           You can only responed to questions related to this Tokyobeast, web3, blockchain, or topic related to this document.
           Respond in the same language as the user's query. Here is the context from the provided documents: \n\n${context}` },
         { role: "user", content: prompt }
