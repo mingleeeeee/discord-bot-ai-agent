@@ -1,0 +1,1712 @@
+build started...
+build finished: 515.388666ms
+build started...
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Item"
+
+    src/sasat/dataSources/db/Item.ts:1:42:
+      1 │ ...dItemDBDataSource } from "../../__generated__/dataSources/db/Item";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/User"
+
+    src/sasat/dataSources/db/User.ts:1:42:
+      1 │ ...dUserDBDataSource } from "../../__generated__/dataSources/db/User";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskTargetRole"
+
+    src/sasat/dataSources/db/TaskTargetRole.ts:1:52:
+      1 │ ...aSource } from "../../__generated__/dataSources/db/TaskTargetRole";
+        ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SeasonReservation"
+
+    src/sasat/dataSources/db/SeasonReservation.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/SeasonReservation";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Bonus"
+
+    src/sasat/dataSources/db/Bonus.ts:1:43:
+      1 │ ...onusDBDataSource } from "../../__generated__/dataSources/db/Bonus";
+        ╵                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CompletedTaskUser"
+
+    src/sasat/dataSources/db/CompletedTaskUser.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/CompletedTaskUser";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/DiscordPostTask"
+
+    src/sasat/dataSources/db/DiscordPostTask.ts:1:53:
+      1 │ ...Source } from "../../__generated__/dataSources/db/DiscordPostTask";
+        ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskType"
+
+    src/sasat/dataSources/db/TaskType.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/TaskType";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Balance"
+
+    src/sasat/dataSources/db/Balance.ts:1:45:
+      1 │ ...ceDBDataSource } from "../../__generated__/dataSources/db/Balance";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XRetweetTask"
+
+    src/sasat/dataSources/db/XRetweetTask.ts:1:50:
+      1 │ ...ataSource } from "../../__generated__/dataSources/db/XRetweetTask";
+        ╵                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XLikeTask"
+
+    src/sasat/dataSources/db/XLikeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/XLikeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Debt"
+
+    src/sasat/dataSources/db/Debt.ts:1:42:
+      1 │ ...dDebtDBDataSource } from "../../__generated__/dataSources/db/Debt";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Season"
+
+    src/sasat/dataSources/db/Season.ts:1:44:
+      1 │ ...sonDBDataSource } from "../../__generated__/dataSources/db/Season";
+        ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/ItemBalance"
+
+    src/sasat/dataSources/db/ItemBalance.ts:1:49:
+      1 │ ...DataSource } from "../../__generated__/dataSources/db/ItemBalance";
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Currency"
+
+    src/sasat/dataSources/db/Currency.ts:1:46:
+      1 │ ...yDBDataSource } from "../../__generated__/dataSources/db/Currency";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/MiniGame"
+
+    src/sasat/dataSources/db/MiniGame.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/MiniGame";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CrimeTask"
+
+    src/sasat/dataSources/db/CrimeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/CrimeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SerialCode"
+
+    src/sasat/dataSources/db/SerialCode.ts:1:48:
+      1 │ ...BDataSource } from "../../__generated__/dataSources/db/SerialCode";
+        ╵                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/LoginTask"
+
+    src/sasat/dataSources/db/LoginTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/LoginTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/RobTask"
+
+    src/sasat/dataSources/db/RobTask.ts:1:45:
+      1 │ ...skDBDataSource } from "../../__generated__/dataSources/db/RobTask";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build finished: 108.16474999999991ms
+build started...
+build finished: 507.420666ms
+build started...
+build finished: 209.08987499999057ms
+build started...
+✘ [ERROR] Could not resolve "@aws-sdk/client-s3"
+
+    src/commands/user/ask-aibot.ts:4:65:
+      4 │ ...ListObjectsV2Command, GetObjectCommand } from '@aws-sdk/client-s3';
+        ╵                                                  ~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/client-s3" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+build finished: 151.99175000000105ms
+build started...
+build finished: 549.1309170000022ms
+build started...
+build finished: 302.83687500000815ms
+build started...
+build finished: 348.9838330000057ms
+build started...
+build finished: 236.77966599998763ms
+build started...
+build finished: 257.8821659999667ms
+build started...
+build finished: 192.310291999951ms
+build started...
+build finished: 335.8377910000272ms
+build started...
+build finished: 352.75554199982435ms
+build started...
+build finished: 390.392042000778ms
+build started...
+build finished: 359.59291699994355ms
+build started...
+build finished: 348.6819160003215ms
+build started...
+build finished: 351.4623749991879ms
+build started...
+build finished: 357.3414169996977ms
+build started...
+build finished: 392.28779199998826ms
+build started...
+build finished: 453.3237080052495ms
+build started...
+build finished: 425.35737500339746ms
+build started...
+build finished: 349.5077499896288ms
+build started...
+build finished: 330.045416995883ms
+build started...
+build finished: 252.945666000247ms
+build started...
+build finished: 196.84870800375938ms
+build started...
+build finished: 229.32783399522305ms
+build started...
+✘ [ERROR] Could not resolve "franc"
+
+    src/commands/user/ask-aibot.ts:7:18:
+      7 │ import franc from 'franc'; // Import the franc library for language...
+        ╵                   ~~~~~~~
+
+  You can mark the path "franc" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+build finished: 92.97079201042652ms
+build started...
+build finished: 291.0280420035124ms
+build started...
+build finished: 459.95558300614357ms
+build started...
+✘ [ERROR] Expected "}" but found "should"
+
+    src/commands/user/ask-aibot.ts:80:51:
+      80 │ ..., content: `**IMPORTANT**You should answer the same language as...
+         │                                 ~~~~~~
+         ╵                                 }
+
+build finished: 69.92762500047684ms
+build started...
+build finished: 344.8435830026865ms
+build started...
+✘ [ERROR] Could not resolve "franc"
+
+    src/commands/user/ask-aibot.ts:7:18:
+      7 │ import franc from 'franc'; // Import the franc library for language...
+        ╵                   ~~~~~~~
+
+  You can mark the path "franc" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle.
+
+build finished: 128.267083004117ms
+build started...
+✘ [ERROR] No matching export in "node_modules/franc/index.js" for import "default"
+
+    src/commands/user/ask-aibot.ts:7:7:
+      7 │ import franc from 'franc'; // Import the franc library for language...
+        ╵        ~~~~~
+
+build finished: 104.67604200541973ms
+build started...
+✘ [ERROR] No matching export in "node_modules/franc/index.js" for import "default"
+
+    src/commands/user/ask-aibot.ts:7:7:
+      7 │ import franc from 'franc'; // Import the franc library for language...
+        ╵        ~~~~~
+
+build finished: 193.27595899999142ms
+build started...
+▲ [WARNING] Calling "franc" will crash at run-time because it's an import namespace object, not a function [call-import-namespace]
+
+    src/commands/user/ask-aibot.ts:70:23:
+      70 │   const detectedLang = franc(text);
+         ╵                        ~~~~~
+
+  Consider changing "franc" to a default import instead:
+
+    src/commands/user/ask-aibot.ts:7:7:
+      7 │ import * as franc from 'franc';
+        │        ~~~~~~~~~~
+        ╵        franc
+
+  Make sure to enable TypeScript's "esModuleInterop" setting so that TypeScript's type checker generates an error when you try to do this. You can read more about this setting here: https://www.typescriptlang.org/tsconfig#esModuleInterop
+
+build finished: 376.5635830014944ms
+build started...
+▲ [WARNING] Calling "franc" will crash at run-time because it's an import namespace object, not a function [call-import-namespace]
+
+    src/commands/user/ask-aibot.ts:70:23:
+      70 │   const detectedLang = franc(text);
+         ╵                        ~~~~~
+
+  Consider changing "franc" to a default import instead:
+
+    src/commands/user/ask-aibot.ts:7:7:
+      7 │ import * as franc from 'franc'; // Correct import for franc
+        │        ~~~~~~~~~~
+        ╵        franc
+
+  Make sure to enable TypeScript's "esModuleInterop" setting so that TypeScript's type checker generates an error when you try to do this. You can read more about this setting here: https://www.typescriptlang.org/tsconfig#esModuleInterop
+
+build finished: 317.2934169918299ms
+build started...
+build finished: 315.54429100453854ms
+build started...
+build finished: 419.8570419996977ms
+build started...
+build finished: 403.598665997386ms
+build started...
+build finished: 313.99954099953175ms
+build started...
+build finished: 378.29858399927616ms
+build started...
+build finished: 277.865042001009ms
+build started...
+build finished: 295.57095900177956ms
+build started...
+✘ [ERROR] No matching export in "node_modules/franc/index.js" for import "default"
+
+    src/commands/user/ask-aibot.ts:7:7:
+      7 │ import franc from 'franc'; 
+        ╵        ~~~~~
+
+build finished: 138.12100000679493ms
+build started...
+✘ [ERROR] No matching export in "node_modules/franc/index.js" for import "default"
+
+    src/commands/user/ask-aibot.ts:7:7:
+      7 │ import franc from 'franc'; 
+        ╵        ~~~~~
+
+build finished: 261.91350001096725ms
+build started...
+build finished: 358.7996659874916ms
+build started...
+build finished: 221.6102910041809ms
+build started...
+build finished: 490.97116699814796ms
+build started...
+build finished: 494.5200420022011ms
+build started...
+build finished: 689.6829169988632ms
+build started...
+✘ [ERROR] No matching export in "node_modules/franc-min/index.js" for import "default"
+
+    src/commands/user/ask-aibot.ts:7:7:
+      7 │ import franc from 'franc-min';
+        ╵        ~~~~~
+
+build finished: 130.79766699671745ms
+build started...
+▲ [WARNING] Calling "franc" will crash at run-time because it's an import namespace object, not a function [call-import-namespace]
+
+    src/commands/user/ask-aibot.ts:73:27:
+      73 │   const detectedLanguage = franc(query); 
+         ╵                            ~~~~~
+
+  Consider changing "franc" to a default import instead:
+
+    src/commands/user/ask-aibot.ts:7:7:
+      7 │ import * as franc from 'franc-min';
+        │        ~~~~~~~~~~
+        ╵        franc
+
+  Make sure to enable TypeScript's "esModuleInterop" setting so that TypeScript's type checker generates an error when you try to do this. You can read more about this setting here: https://www.typescriptlang.org/tsconfig#esModuleInterop
+
+build finished: 473.79424999654293ms
+build started...
+build finished: 389.9729579985142ms
+build started...
+build finished: 373.61766700446606ms
+build started...
+build finished: 593.8722080141306ms
+build started...
+build finished: 572.6804159879684ms
+build started...
+build finished: 418.8024999946356ms
+build started...
+build finished: 408.5531250089407ms
+build started...
+✘ [ERROR] Could not resolve "languagedetect"
+
+    src/commands/user/ask-aibot.ts:7:31:
+      7 │ const LanguageDetect = require('languagedetect');
+        ╵                                ~~~~~~~~~~~~~~~~
+
+  You can mark the path "languagedetect" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+build finished: 113.60708400607109ms
+build started...
+✘ [ERROR] Could not resolve "languagedetect"
+
+    src/commands/user/ask-aibot.ts:7:31:
+      7 │ const LanguageDetect = require('languagedetect');
+        ╵                                ~~~~~~~~~~~~~~~~
+
+  You can mark the path "languagedetect" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+build finished: 148.04962500929832ms
+build started...
+✘ [ERROR] Could not resolve "languagedetect"
+
+    src/commands/user/ask-aibot.ts:7:31:
+      7 │ const LanguageDetect = require('languagedetect');
+        ╵                                ~~~~~~~~~~~~~~~~
+
+  You can mark the path "languagedetect" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+build finished: 128.03670899569988ms
+build started...
+✘ [ERROR] Could not resolve "languagedetect"
+
+    src/commands/user/ask-aibot.ts:7:31:
+      7 │ const LanguageDetect = require('languagedetect');
+        ╵                                ~~~~~~~~~~~~~~~~
+
+  You can mark the path "languagedetect" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+build finished: 112.5486249923706ms
+build started...
+build finished: 392.4535829871893ms
+build started...
+build finished: 205.885291993618ms
+build started...
+build finished: 464.57141700387ms
+build started...
+build finished: 551.7282090038061ms
+build started...
+build finished: 291.69445799291134ms
+build started...
+✘ [ERROR] Unexpected "}"
+
+    src/commands/user/ask-aibot.ts:76:24:
+      76 │   console.log(`Query: ${}`)
+         ╵                         ^
+
+build finished: 69.88187499344349ms
+build started...
+build finished: 281.07733400166035ms
+build started...
+build finished: 465.65620800852776ms
+build started...
+build finished: 235.52804200351238ms
+build started...
+✘ [ERROR] Could not resolve "@aws-sdk/credential-provider-web-identity"
+
+    node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js:127:83:
+      127 │ ...> __toESM(require("@aws-sdk/credential-provider-web-identity")));
+          ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/credential-provider-web-identity" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+✘ [ERROR] Could not resolve "@aws-sdk/credential-provider-web-identity"
+
+    node_modules/@aws-sdk/credential-provider-ini/dist-cjs/index.js:213:132:
+      213 │ ...oESM(require("@aws-sdk/credential-provider-web-identity"))).then(
+          ╵                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/credential-provider-web-identity" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+build finished: 84.94983300566673ms
+build started...
+✘ [ERROR] Could not resolve "@aws-sdk/middleware-user-agent"
+
+    node_modules/@aws-sdk/client-s3/dist-cjs/index.js:266:43:
+      266 │ ...iddleware_user_agent = require("@aws-sdk/middleware-user-agent");
+          ╵                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/middleware-user-agent" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+✘ [ERROR] Could not resolve "@aws-sdk/credential-provider-env"
+
+    node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js:41:45:
+      41 │ ...ential_provider_env = require("@aws-sdk/credential-provider-env");
+         ╵                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/credential-provider-env" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+✘ [ERROR] Could not resolve "@aws-sdk/credential-provider-http"
+
+    node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js:53:76:
+      53 │ ...then(() => __toESM(require("@aws-sdk/credential-provider-http")));
+         ╵                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/credential-provider-http" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+✘ [ERROR] Could not resolve "@aws-sdk/credential-provider-sso"
+
+    node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js:109:77:
+      109 │ ...then(() => __toESM(require("@aws-sdk/credential-provider-sso")));
+          ╵                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/credential-provider-sso" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+✘ [ERROR] Could not resolve "@aws-sdk/credential-provider-ini"
+
+    node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js:115:77:
+      115 │ ...then(() => __toESM(require("@aws-sdk/credential-provider-ini")));
+          ╵                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/credential-provider-ini" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+✘ [ERROR] Could not resolve "@aws-sdk/credential-provider-process"
+
+    node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js:121:81:
+      121 │ ...(() => __toESM(require("@aws-sdk/credential-provider-process")));
+          ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/credential-provider-process" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+✘ [ERROR] Could not resolve "@aws-sdk/credential-provider-web-identity"
+
+    node_modules/@aws-sdk/credential-provider-node/dist-cjs/index.js:127:83:
+      127 │ ...> __toESM(require("@aws-sdk/credential-provider-web-identity")));
+          ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/credential-provider-web-identity" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+✘ [ERROR] Could not resolve "@aws-sdk/middleware-user-agent"
+
+    node_modules/@aws-sdk/util-user-agent-node/dist-cjs/index.js:84:43:
+      84 │ ...middleware_user_agent = require("@aws-sdk/middleware-user-agent");
+         ╵                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  You can mark the path "@aws-sdk/middleware-user-agent" as external to exclude it from the bundle, which will remove this error and leave the unresolved path in the bundle. You can also surround this "require" call with a try/catch block to handle this failure at run-time instead of bundle-time.
+
+build finished: 93build started...
+build started...
+build finished: 326.27108401060104ms
+build started...
+build finished: 317.1736660003662ms
+build started...
+✘ [ERROR] Could not resolve "./translateService"
+
+    src/index.ts:57:33:
+      57 │ ...anslateMessage } from "./translateService"; // You will need to...
+         ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+build finished: 102.65716700255871ms
+build started...
+✘ [ERROR] Could not resolve "./translateService"
+
+    src/index.ts:57:33:
+      57 │ ...anslateMessage } from "./translateService"; // You will need to...
+         ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+build finished: 90.79283300042152ms
+build started...
+✘ [ERROR] Could not resolve "./translateService"
+
+    src/index.ts:57:33:
+      57 │ ...anslateMessage } from "./translateService"; // You will need to...
+         ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+build finished: 87.61974999308586ms
+build started...
+✘ [ERROR] Could not resolve "./translateService"
+
+    src/index.ts:57:33:
+      57 │ ...anslateMessage } from "./translateService"; // You will need to...
+         ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+build finished: 93.42775000631809ms
+build started...
+✘ [ERROR] Could not resolve "./translateService"
+
+    src/index.ts:57:33:
+      57 │ ...anslateMessage } from "./translateService"; // You will need to...
+         ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+build finished: 83.20945899188519ms
+build started...
+✘ [ERROR] Could not resolve "./translateService"
+
+    src/index.ts:57:33:
+      57 │ ...anslateMessage } from "./translateService"; // You will need to...
+         ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+build finished: 77.81862498819828ms
+build started...
+✘ [ERROR] Could not resolve "./translateService"
+
+    src/index.ts:57:33:
+      57 │ ...anslateMessage } from "./translateService"; // You will need to...
+         ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+build finished: 81.1651249974966ms
+build started...
+✘ [ERROR] Could not resolve "./translateService"
+
+    src/index.ts:57:33:
+      57 │ ...anslateMessage } from "./translateService"; // You will need to...
+         ╵                          ~~~~~~~~~~~~~~~~~~~~
+
+build finished: 74.25145798921585ms
+build started...
+▲ [WARNING] Import "translateMessage" will always be undefined because the file "src/translateService.ts" has no exports [import-is-undefined]
+
+    src/index.ts:57:9:
+      57 │ import { translateMessage } from "./translateService"; // You will...
+         ╵          ~~~~~~~~~~~~~~~~
+
+build finished: 295.8015000075102ms
+build started...
+✘ [ERROR] No matching export in "node_modules/openai/index.mjs" for import "Configuration"
+
+    src/translateService.ts:1:9:
+      1 │ import { Configuration, OpenAIApi } from "openai";
+        ╵          ~~~~~~~~~~~~~
+
+✘ [ERROR] No matching export in "node_modules/openai/index.mjs" for import "OpenAIApi"
+
+    src/translateService.ts:1:24:
+      1 │ import { Configuration, OpenAIApi } from "openai";
+        ╵                         ~~~~~~~~~
+
+build finished: 123.35683299601078ms
+build started...
+build finished: 433.2750419974327ms
+build started...
+build finished: 456.9795829951763ms
+build started...
+✘ [ERROR] Could not resolve "translateService"
+
+    src/index.ts:57:33:
+      57 │ ...ranslateMessage } from "translateService"; // You will need to ...
+         │                           ~~~~~~~~~~~~~~~~~~
+         ╵                           "./translateService"
+
+  Use the relative path "./translateService" to reference the file "src/translateService.ts". Without the leading "./", the path "translateService" is being interpreted as a package path instead.
+
+build finished: 86.69508299231529ms
+build started...
+build finished: 276.2098750025034ms
+build started...
+build finished: 422.5185420066118ms
+build started...
+build finished: 324.75279200077057ms
+build started...
+build finished: 378.7154579907656ms
+build started...
+build finished: 398.3018749952316ms
+build started...
+build finished: 326.88608299195766ms
+build started...
+build finished: 430.8811669945717ms
+build started...
+build finished: 317.4453330039978ms
+build started...
+build finished: 388.56004099547863ms
+build started...
+build finished: 285.16449999809265ms
+build started...
+build finished: 412.04179199039936ms
+build started...
+build finished: 544.8755410015583ms
+build started...
+build finished: 417.01674999296665ms
+build started...
+build finished: 443.2629579901695ms
+build started...
+build finished: 378.86441700160503ms
+build started...
+build finished: 395.4829159975052ms
+build started...
+build finished: 393.52033300697803ms
+build started...
+build finished: 479.4957499951124ms
+build started...
+build finished: 552.1409579962492ms
+build started...
+build finished: 361.267416998744ms
+build started...
+build finished: 318.4276669919491ms
+build started...
+build finished: 444.98570799827576ms
+build started...
+build finished: 368.3959579914808ms
+build started...
+build finished: 276.57095900177956ms
+build started...
+build finished: 392.4032499939203ms
+build started...
+build finished: 321.03170900046825ms
+build started...
+build finished: 365.34254199266434ms
+build started...
+build finished: 499.6282079964876ms
+build started...
+build finished: 452.89991599321365ms
+build started...
+build finished: 420.7907500118017ms
+build started...
+build finished: 432.9051249921322ms
+build started...
+build finished: 376.34458400309086ms
+build started...
+build finished: 581.353084012866ms
+build started...
+build finished: 558.517416998744ms
+build started...
+build finished: 385.27533300220966ms
+build started...
+build finished: 359.84220799803734ms
+build started...
+build finished: 399.7149999886751ms
+build started...
+build finished: 383.34104201197624ms
+build started...
+build finished: 500.07787500321865ms
+build started...
+build finished: 452.8722909986973ms
+build started...
+build finished: 356.20191599428654ms
+build started...
+build finished: 491.6092500090599ms
+build started...
+build finished: 481.8449999988079ms
+build started...
+build finished: 431.552208006382ms
+build started...
+build finished: 489.66258400678635ms
+build started...
+build finished: 413.6058340072632ms
+build started...
+build finished: 430.9610000103712ms
+build started...
+build finished: 487.14724999666214ms
+build started...
+build finished: 306.56941701471806ms
+build started...
+build finished: 376.5962499976158ms
+build started...
+build finished: 463.28404100239277ms
+build started...
+build finished: 408.07570900022984ms
+build started...
+build finished: 391.10129100084305ms
+build started...
+build finished: 280.68991599977016ms
+build started...
+build finished: 381.5778749883175ms
+build started...
+build finished: 416.12741699814796ms
+build started...
+build finished: 427.56458300352097ms
+build started...
+build finished: 416.1699580103159ms
+build started...
+build finished: 322.4549580067396ms
+build started...
+build finished: 441.1471669971943ms
+build started...
+build finished: 334.45441599190235ms
+build started...
+build finished: 404.839125007391ms
+build started...
+build finished: 354.60429099202156ms
+build started...
+build finished: 461.62529200315475ms
+build started...
+build finished: 504.02404099702835ms
+build started...
+build finished: 411.062583014369ms
+build started...
+build finished: 445.49812500178814ms
+build started...
+build finished: 455.5887909978628ms
+build started...
+build finished: 406.72454200685024ms
+build started...
+✘ [ERROR] Expected ";" but found "said"
+
+    src/index.ts:109:4:
+      109 │ You said:
+          │     ~~~~
+          ╵     ;
+
+build finished: 2.4200000017881393ms
+build started...
+build finished: 398.43066699802876ms
+build started...
+build finished: 256.5630410015583ms
+build started...
+build finished: 224.30179201066494ms
+build started...
+build finished: 329.7137500047684ms
+build started...
+build finished: 442.67416700720787ms
+build started...
+build finished: 276.3170830011368ms
+build started...
+build finished: 365.2035839855671ms
+build started...
+build finished: 434.0508340001106ms
+build started...
+build finished: 378.39479199051857ms
+build started...
+build finished: 427.8259579986334ms
+build started...
+build finished: 393.1311659961939ms
+build started...
+build finished: 412.27175000309944ms
+build started...
+build finished: 334.7120830118656ms
+build started...
+build finished: 272.80833299458027ms
+build started...
+build finished: 260.8602910041809ms
+build started...
+build finished: 271.02120800316334ms
+build started...
+build finished: 220.96491700410843ms
+build started...
+build finished: 241.51762500405312ms
+build started...
+build finished: 239.1338329911232ms
+build started...
+build finished: 453.7540419995785ms
+build started...
+build finished: 436.6754170060158ms
+build started...
+build finished: 443.9364160001278ms
+build started...
+build finished: 416.48749999701977ms
+build started...
+build finished: 544.1026250123978ms
+build started...
+build finished: 396.23337499797344ms
+build started...
+build finished: 406.82245901227ms
+build started...
+build finished: 333.2626249939203ms
+build started...
+build finished: 245.70945799350739ms
+build started...
+build finished: 396.5122500061989ms
+build started...
+build finished: 301.7082909941673ms
+build started...
+build finished: 418.4682080000639ms
+build started...
+build finished: 278.549707993865ms
+build started...
+build finished: 311.2772080004215ms
+build started...
+build finished: 394.3839999884367ms
+build started...
+build finished: 407.7821249961853ms
+build started...
+build finished: 435.1461250036955ms
+build started...
+✘ [ERROR] Expected ")" but found "{"
+
+    src/index.ts:100:30:
+      100 │       .setCustomId(translate-${lang.code}-${message.id})
+          │                               ^
+          ╵                               )
+
+build finished: 3.1481249928474426ms
+build started...
+build finished: 478.44058299064636ms
+build started...
+build finished: 348.6911659985781ms
+build started...
+build finished: 420.92045798897743ms
+build started...
+build finished: 423.6182910054922ms
+build started...
+build finished: 328.296875ms
+build started...
+build finished: 350.4794159978628ms
+build started...
+build finished: 521.0554579943419ms
+build started...
+build finished: 356.65833300352097ms
+build started...
+build finished: 378.6242920011282ms
+build started...
+build finished: 402.8907499909401ms
+build started...
+build finished: 488.3588750064373ms
+build started...
+build finished: 415.6999589949846ms
+build started...
+build finished: 433.9196669906378ms
+build started...
+build finished: 273.27991700172424ms
+build started...
+build finished: 178.91079200804234ms
+build started...
+build finished: 416.4907920062542ms
+build started...
+build finished: 440.7520829886198ms
+build started...
+build finished: 232.68295799195766ms
+build started...
+build finished: 461.7297919988632ms
+build started...
+build finished: 289.78541700541973ms
+build started...
+build finished: 490.4575410038233ms
+build started...
+build finished: 312.2066249996424ms
+build started...
+build finished: 422.56254199147224ms
+build started...
+build finished: 420.5236670076847ms
+build started...
+build finished: 423.40037500858307ms
+build started...
+✘ [ERROR] Expected ")" but found "{"
+
+    src/index.ts:102:30:
+      102 │       .setCustomId(translate-${lang.code}-${message.id})
+          │                               ^
+          ╵                               )
+
+build finished: 2.3685000091791153ms
+build started...
+build finished: 306.0566670000553ms
+build started...
+build finished: 304.10629200935364ms
+build started...
+build finished: 755.5307089984417ms
+build started...
+build finished: 367.87262500822544ms
+build started...
+build finished: 289.0177089869976ms
+build started...
+build finished: 246.0687080025673ms
+build started...
+build finished: 373.6994169950485ms
+build started...
+build finished: 483.54620899260044ms
+build started...
+build finished: 397.7879159897566ms
+build started...
+build finished: 321.68420800566673ms
+build started...
+build finished: 320.75912499427795ms
+build started...
+build finished: 427.53291699290276ms
+build started...
+build finished: 394.8955419957638ms
+build started...
+build finished: 288.1046250015497ms
+build started...
+build finished: 385.9400420039892ms
+build started...
+build finished: 339.24441699683666ms
+build started...
+build finished: 441.12649999558926ms
+build started...
+build finished: 273.99687500298023ms
+build started...
+build finished: 392.6934999972582ms
+build started...
+build finished: 402.3875830024481ms
+build started...
+build finished: 315.0814580023289ms
+build started...
+build finished: 486.80866700410843ms
+build started...
+build finished: 224.26204200088978ms
+build started...
+build finished: 475.6564590036869ms
+build started...
+build finished: 344.33562499284744ms
+build started...
+build finished: 441.47954200208187ms
+build started...
+build finished: 259.77429200708866ms
+build started...
+build finished: 425.74533399939537ms
+build started...
+build finished: 363.6835830062628ms
+build started...
+build finished: 462.20020800828934ms
+build started...
+build finished: 498.750333994627ms
+build started...
+build finished: 324.491833999753ms
+build started...
+build finished: 234.83116599917412ms
+build started...
+✘ [ERROR] Unexpected ")"
+
+    src/index.ts:134:1:
+      134 │ });
+          ╵  ^
+
+build finished: 1.9709579944610596ms
+build started...
+build finished: 481.6147090047598ms
+build started...
+✘ [ERROR] Expected "finally" but found ")"
+
+    src/index.ts:206:1:
+      206 │ });
+          │  ^
+          ╵  finally
+
+build finished: 2.313375011086464ms
+build started...
+build finished: 487.40033300220966ms
+build started...
+build finished: 430.9518750011921ms
+build started...
+build finished: 289.23291601240635ms
+build started...
+build finished: 447.53895799815655ms
+build started...
+build finished: 485.31633299589157ms
+build started...
+build finished: 287.73679099977016ms
+build started...
+build finished: 308.99316699802876ms
+build started...
+build finished: 418.1599579900503ms
+build started...
+build finished: 388.070999994874ms
+build started...
+build finished: 435.71241699159145ms
+build started...
+build finished: 368.5036669969559ms
+build started...
+build finished: 485.5493749976158ms
+build started...
+build finished: 484.3271659910679ms
+build started...
+build finished: 355.6338749974966ms
+build started...
+build finished: 257.5121250003576ms
+build started...
+build finished: 215.20687499642372ms
+build started...
+build finished: 351.63150000572205ms
+build started...
+✘ [ERROR] Unexpected "export"
+
+    src/index.ts:1021:0:
+      1021 │ export type TweetBase =
+           ╵ ~~~~~~
+
+build finished: 2.951915994286537ms
+build started...
+build finished: 361.98391699790955ms
+build started...
+build finished: 375.09666599333286ms
+build started...
+build finished: 393.0855419933796ms
+build started...
+build finished: 457.3733749985695ms
+build started...
+build finished: 265.12812499701977ms
+build started...
+build finished: 421.25720900297165ms
+build started...
+build finished: 363.5452499985695ms
+build started...
+build finished: 277.85283298790455ms
+build started...
+build finished: 266.48749999701977ms
+build started...
+build finished: 391.05712500214577ms
+build started...
+build finished: 359.6274579912424ms
+build started...
+build finished: 264.32966700196266ms
+build started...
+build finished: 385.779374986887ms
+build started...
+build finished: 224.386332988739ms
+build started...
+build finished: 337.87341699004173ms
+build started...
+build finished: 465.6030000001192ms
+build started...
+build finished: 422.0493339896202ms
+build started...
+build finished: 300.2691670060158ms
+build started...
+build finished: 457.30620799958706ms
+build started...
+build finished: 328.5134579986334ms
+build started...
+build finished: 248.0083750039339ms
+build started...
+build finished: 350.1291249990463ms
+build started...
+build finished: 425.9762500077486ms
+build started...
+build finished: 322.8670840114355ms
+build started...
+build finished: 346.354041993618ms
+build started...
+✘ [ERROR] Unterminated regular expression
+
+    src/index.ts:166:42:
+      166 │         / Respond with the translated text
+          ╵                                           ^
+
+build finished: 3.404667004942894ms
+build started...
+build finished: 521.9989169985056ms
+build started...
+build finished: 468.0131660103798ms
+build started...
+build finished: 363.6806670129299ms
+build started...
+build finished: 398.0382080078125ms
+build started...
+build finished: 401.1720419973135ms
+build started...
+build finished: 396.2686659991741ms
+build started...
+build finished: 403.8457500040531ms
+build started...
+build finished: 383.6578750014305ms
+build started...
+build finished: 430.4658749997616ms
+build started...
+build finished: 256.2514169961214ms
+build started...
+build finished: 328.4636670053005ms
+build started...
+build finished: 443.93600000441074ms
+build started...
+build finished: 322.5641250014305ms
+build started...
+build finished: 405.2931669950485ms
+build started...
+build finished: 443.7668339908123ms
+build started...
+build finished: 469.85141602158546ms
+build started...
+build finished: 413.6976250112057ms
+build started...
+build finished: 580.146624982357ms
+build started...
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CompletedTaskUser"
+
+    src/sasat/dataSources/db/CompletedTaskUser.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/CompletedTaskUser";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/User"
+
+    src/sasat/dataSources/db/User.ts:1:42:
+      1 │ ...dUserDBDataSource } from "../../__generated__/dataSources/db/User";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/DiscordPostTask"
+
+    src/sasat/dataSources/db/DiscordPostTask.ts:1:53:
+      1 │ ...Source } from "../../__generated__/dataSources/db/DiscordPostTask";
+        ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Bonus"
+
+    src/sasat/dataSources/db/Bonus.ts:1:43:
+      1 │ ...onusDBDataSource } from "../../__generated__/dataSources/db/Bonus";
+        ╵                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskTargetRole"
+
+    src/sasat/dataSources/db/TaskTargetRole.ts:1:52:
+      1 │ ...aSource } from "../../__generated__/dataSources/db/TaskTargetRole";
+        ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XRetweetTask"
+
+    src/sasat/dataSources/db/XRetweetTask.ts:1:50:
+      1 │ ...ataSource } from "../../__generated__/dataSources/db/XRetweetTask";
+        ╵                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Item"
+
+    src/sasat/dataSources/db/Item.ts:1:42:
+      1 │ ...dItemDBDataSource } from "../../__generated__/dataSources/db/Item";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Debt"
+
+    src/sasat/dataSources/db/Debt.ts:1:42:
+      1 │ ...dDebtDBDataSource } from "../../__generated__/dataSources/db/Debt";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Balance"
+
+    src/sasat/dataSources/db/Balance.ts:1:45:
+      1 │ ...ceDBDataSource } from "../../__generated__/dataSources/db/Balance";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskType"
+
+    src/sasat/dataSources/db/TaskType.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/TaskType";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../_✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CompletedTaskUser"
+
+    src/sasat/dataSources/db/CompletedTaskUser.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/CompletedTaskUser";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/ItemBalance"
+
+    src/sasat/dataSources/db/ItemBalance.ts:1:49:
+      1 │ ...DataSource } from "../../__generated__/dataSources/db/ItemBalance";
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskType"
+
+    src/sasat/dataSources/db/TaskType.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/TaskType";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/User"
+
+    src/sasat/dataSources/db/User.ts:1:42:
+      1 │ ...dUserDBDataSource } from "../../__generated__/dataSources/db/User";
+        ╵                             ~~~~~~~~~~~✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/MiniGame"
+
+    src/sasat/dataSources/db/MiniGame.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/MiniGame";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/LoginTask"
+
+    src/sasat/dataSources/db/LoginTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/LoginTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/RobTask"
+
+    src/sasat/dataSources/db/RobTask.ts:1:45:
+      1 │ ...skDBDataSource } from "../../__generated__/dataSources/db/RobTask";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SerialCode"
+
+    src/sasat/dataSources/db/SerialCode.ts:1:48:
+      1 │ ...BDataSource } from "../../__generated__/dataSources/db/SerialCode";
+        ╵                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CrimeTask"
+
+    src/sasat/dataSources/db/CrimeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/CrimeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Currency"
+
+    src/sasat/dataSources/db/Currency.ts:1:46:
+      1 │ ...yDBDataSource } from "../../__generated__/dataSources/db/Currency";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build finished: 129.8272500038147ms
+build started...
+build finished: 230.70558300614357ms
+build started...
+build finished: 480.9193750023842ms
+build started...
+build finished: 529.0077919960022ms
+build started...
+build finished: 532.818499982357ms
+build started...
+build finished: 386.3429999947548ms
+build started...
+build finished: 485.89341700077057ms
+build started...
+build finished: 322.5109579861164ms
+build started...
+build finished: 377.38087499141693ms
+build started...
+build finished: 517.0444169938564ms
+build started...
+build finished: 391.0045420229435ms
+build started...
+build finished: 426.1022920012474ms
+build started...
+build finished: 489.58729100227356ms
+build started...
+build finished: 474.4552499949932ms
+build started...
+build finished: 282.54845798015594ms
+build started...
+build finished: 444.63199999928474ms
+build started...
+build finished: 358.410540997982ms
+build started...
+build finished: 471.257041990757ms
+build started...
+build finished: 499.81491699814796ms
+build started...
+build finished: 512.1810840070248ms
+build started...
+build finished: 549.7445420026779ms
+build started...
+build finished: 348.03679099678993ms
+build started...
+build finished: 365.82037499547005ms
+build started...
+build finished: 273.6552919745445ms
+build started...
+build finished: 367.3319999873638ms
+build started...
+build finished: 295.53924998641014ms
+build started...
+build finished: 257.05479097366333ms
+build started...
+build finished: 451.9216249883175ms
+build started...
+build finished: 473.0307500064373ms
+build started...
+build finished: 485.8891249895096ms
+build started...
+build finished: 344.68941700458527ms
+build started...
+build finished: 407.3886249959469ms
+build started...
+build finished: 243.80079200863838ms
+build started...
+build finished: 330.36862501502037ms
+build started...
+build finished: 341.4770829975605ms
+build started...
+build finished: 382.44041699171066ms
+build started...
+build finished: 452.14950001239777ms
+build started...
+build finished: 448.4017919898033ms
+build started...
+build finished: 449.39837500452995ms
+build started...
+build finished: 560.2034159898758ms
+build started...
+build finished: 494.59941601753235ms
+build started...
+build finished: 474.7434170246124ms
+build started...
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Season"
+
+    src/sasat/dataSources/db/Season.ts:1:44:
+      1 │ ...sonDBDataSource } from "../../__generated__/dataSources/db/Season";
+        ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Item"
+
+    src/sasat/dataSources/db/Item.ts:1:42:
+      1 │ ...dItemDBDataSource } from "../../__generated__/dataSources/db/Item";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SeasonReservation"
+
+    src/sasat/dataSources/db/SeasonReservation.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/SeasonReservation";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Balance"
+
+    src/sasat/dataSources/db/Balance.ts:1:45:
+      1 │ ...ceDBDataSource } from "../../__generated__/dataSources/db/Balance";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/User"
+
+    src/sasat/dataSources/db/User.ts:1:42:
+      1 │ ...dUserDBDataSource } from "../../__generated__/dataSources/db/User";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Debt"
+
+    src/sasat/dataSources/db/Debt.ts:1:42:
+      1 │ ...dDebtDBDataSource } from "../../__generated__/dataSources/db/Debt";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CompletedTaskUser"
+
+    src/sasat/dataSources/db/CompletedTaskUser.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/CompletedTaskUser";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Bonus"
+
+    src/sasat/dataSources/db/Bonus.ts:1:43:
+      1 │ ...onusDBDataSource } from "../../__generated__/dataSources/db/Bonus";
+        ╵                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskType"
+
+    src/sasat/dataSources/db/TaskType.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/TaskType";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/DiscordPostTask"
+
+    src/sasat/dataSources/db/DiscordPostTask.ts:1:53:
+      1 │ ...Source } from "../../__generated__/dataSources/db/DiscordPostTask";
+        ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskTargetRole"
+
+    src/sasat/dataSources/db/TaskTargetRole.ts:1:52:
+      1 │ ...aSource } from "../../__generated__/dataSources/db/TaskTargetRole";
+        ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/ItemBalance"
+
+    src/sasat/dataSources/db/ItemBalance.ts:1:49:
+      1 │ ...DataSource } from "../../__generated__/dataSources/db/ItemBalance";
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XLikeTask"
+
+    src/sasat/dataSources/db/XLikeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/XLikeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XRetweetTask"
+
+    src/sasat/dataSources/db/XRetweetTask.ts:1:50:
+      1 │ ...ataSource } from "../../__generated__/dataSources/db/XRetweetTask";
+        ╵                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/LoginTask"
+
+    src/sasat/dataSources/db/LoginTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/LoginTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/RobTask"
+
+    src/sasat/dataSources/db/RobTask.ts:1:45:
+      1 │ ...skDBDataSource } from "../../__generated__/dataSources/db/RobTask";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SerialCode"
+
+    src/sasat/dataSources/db/SerialCode.ts:1:48:
+      1 │ ...BDataSource } from "../../__generated__/dataSources/db/SerialCode";
+        ╵                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CrimeTask"
+
+    src/sasat/dataSources/db/CrimeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/CrimeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Currency"
+
+    src/sasat/dataSources/db/Currency.ts:1:46:
+      1 │ ...yDBDataSource } from "../../__generated__/dataSources/db/Currency";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/MiniGame"
+
+    src/sasat/dataSources/db/MiniGame.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/MiniGame";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build finished: 164.00295901298523ms
+build started...
+▲ [WARNING] Import "GeneratedTaskTargetRoleDBDataSource" will always be undefined because the file "src/sasat/__generated__/dataSources/db/TaskTargetRole.ts" has no exports [import-is-undefined]
+
+    src/sasat/dataSources/db/TaskTargetRole.ts:1:9:
+      1 │ import { GeneratedTaskTargetRoleDBDataSource } from "../../__genera...
+        ╵          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Import "relationMap" will always be undefined because the file "src/sasat/__generated__/relationMap.ts" has no exports [import-is-undefined]
+
+    src/sasat/baseDBDataSource.ts:2:9:
+      2 │ import { relationMap, tableInfo } from "./__generated__/relationMap";
+        ╵          ~~~~~~~~~~~
+
+▲ [WARNING] Import "tableInfo" will always be undefined because the file "src/sasat/__generated__/relationMap.ts" has no exports [import-is-undefined]
+
+    src/sasat/baseDBDataSource.ts:2:22:
+      2 │ import { relationMap, tableInfo } from "./__generated__/relationMap";
+        ╵                       ~~~~~~~~~
+
+▲ [WARNING] Import "GeneratedMiniGameDBDataSource" will always be undefined because the file "src/sasat/__generated__/dataSources/db/MiniGame.ts" has no exports [import-is-undefined]
+
+    src/sasat/dataSources/db/MiniGame.ts:1:9:
+      1 │ import { GeneratedMiniGameDBDataSource } from "../../__generated__/...
+        ╵          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+▲ [WARNING] Import "GeneratedSerialCodeDBDataSource" will always be undefined because the file "src/sasat/__generated__/dataSources/db/SerialCode.ts" has no exports [import-is-undefined]
+
+    src/sasat/dataSources/db/SerialCode.ts:1:9:
+      1 │ import { GeneratedSerialCodeDBDataSource } from "../../__generated_...
+        ╵          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build finished: 489.47674998641014ms
+build started...
+build finished: 191.11762499809265ms
+build started...
+build finished: 456.17308300733566ms
+build started...
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CompletedTaskUser"
+
+    src/sasat/dataSources/db/CompletedTaskUser.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/CompletedTaskUser";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Debt"
+
+    src/sasat/dataSources/db/Debt.ts:1:42:
+      1 │ ...dDebtDBDataSource } from "../../__generated__/dataSources/db/Debt";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/User"
+
+    src/sasat/dataSources/db/User.ts:1:42:
+      1 │ ...dUserDBDataSource } from "../../__generated__/dataSources/db/User";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Balance"
+
+    src/sasat/dataSources/db/Balance.ts:1:45:
+      1 │ ...ceDBDataSource } from "../../__generated__/dataSources/db/Balance";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/DiscordPostTask"
+
+    src/sasat/dataSources/db/DiscordPostTask.ts:1:53:
+      1 │ ...Source } from "../../__generated__/dataSources/db/DiscordPostTask";
+        ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskTargetRole"
+
+    src/sasat/dataSources/db/TaskTargetRole.ts:1:52:
+      1 │ ...aSource } from "../../__generated__/dataSources/db/TaskTargetRole";
+        ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskType"
+
+    src/sasat/dataSources/db/TaskType.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/TaskType";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Bonus"
+
+    src/sasat/dataSources/db/Bonus.ts:1:43:
+      1 │ ...onusDBDataSource } from "../../__generated__/dataSources/db/Bonus";
+        ╵                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Item"
+
+    src/sasat/dataSources/db/Item.ts:1:42:
+      1 │ ...dItemDBDataSource } from "../../__generated__/dataSources/db/Item";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/MiniGame"
+
+    src/sasat/dataSources/db/MiniGame.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/MiniGame";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SeasonReservation"
+
+    src/sasat/dataSources/db/SeasonReservation.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/SeasonReservation";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Season"
+
+    src/sasat/dataSources/db/Season.ts:1:44:
+      1 │ ...sonDBDataSource } from "../../__generated__/dataSources/db/Season";
+        ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/ItemBalance"
+
+    src/sasat/dataSources/db/ItemBalance.ts:1:49:
+      1 │ ...DataSource } from "../../__generated__/dataSources/db/ItemBalance";
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XLikeTask"
+
+    src/sasat/dataSources/db/XLikeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/XLikeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XRetweetTask"
+
+    src/sasat/dataSources/db/XRetweetTask.ts:1:50:
+      1 │ ...ataSource } from "../../__generated__/dataSources/db/XRetweetTask";
+        ╵                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SerialCode"
+
+    src/sasat/dataSources/db/SerialCode.ts:1:48:
+      1 │ ...BDataSource } from "../../__generated__/dataSources/db/SerialCode";
+        ╵                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CrimeTask"
+
+    src/sasat/dataSources/db/CrimeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/CrimeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/RobTask"
+
+    src/sasat/dataSources/db/RobTask.ts:1:45:
+      1 │ ...skDBDataSource } from "../../__generated__/dataSources/db/RobTask";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/LoginTask"
+
+    src/sasat/dataSources/db/LoginTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/LoginTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Currency"
+
+    src/sasat/dataSources/db/Currency.ts:1:46:
+      1 │ ...yDBDataSource } from "../../__generated__/dataSources/db/Currency";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build finished: 196.13587498664856ms
+build started...
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CrimeTask"
+
+    src/sasat/dataSources/db/CrimeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/CrimeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/MiniGame"
+
+    src/sasat/dataSources/db/MiniGame.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/MiniGame";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskType"
+
+    src/sasat/dataSources/db/TaskType.ts:1:46:
+      1 │ ...eDBDataSource } from "../../__generated__/dataSources/db/TaskType";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/CompletedTaskUser"
+
+    src/sasat/dataSources/db/CompletedTaskUser.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/CompletedTaskUser";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/DiscordPostTask"
+
+    src/sasat/dataSources/db/DiscordPostTask.ts:1:53:
+      1 │ ...Source } from "../../__generated__/dataSources/db/DiscordPostTask";
+        ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/LoginTask"
+
+    src/sasat/dataSources/db/LoginTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/LoginTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XLikeTask"
+
+    src/sasat/dataSources/db/XLikeTask.ts:1:47:
+      1 │ ...DBDataSource } from "../../__generated__/dataSources/db/XLikeTask";
+        ╵                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/RobTask"
+
+    src/sasat/dataSources/db/RobTask.ts:1:45:
+      1 │ ...skDBDataSource } from "../../__generated__/dataSources/db/RobTask";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/XRetweetTask"
+
+    src/sasat/dataSources/db/XRetweetTask.ts:1:50:
+      1 │ ...ataSource } from "../../__generated__/dataSources/db/XRetweetTask";
+        ╵                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Balance"
+
+    src/sasat/dataSources/db/Balance.ts:1:45:
+      1 │ ...ceDBDataSource } from "../../__generated__/dataSources/db/Balance";
+        ╵                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Couldbuild started...
+build finished: 527.7485420107841ms
+build started...
+build finished: 383.16891598701477ms
+│ ...dUserDBDataSource } from "../../__generated__/dataSources/db/User";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SerialCode"
+
+    src/sasat/dataSources/db/SerialCode.ts:1:48:
+      1 │ ...BDataSource } from "../../__generated__/dataSources/db/SerialCode";
+        ╵                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/SeasonReservation"
+
+    src/sasat/dataSources/db/SeasonReservation.ts:1:55:
+      1 │ ...urce } from "../../__generated__/dataSources/db/SeasonReservation";
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/TaskTargetRole"
+
+    src/sasat/dataSources/db/TaskTargetRole.ts:1:52:
+      1 │ ...aSource } from "../../__generated__/dataSources/db/TaskTargetRole";
+        ╵                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Item"
+
+    src/sasat/dataSources/db/Item.ts:1:42:
+      1 │ ...dItemDBDataSource } from "../../__generated__/dataSources/db/Item";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Bonus"
+
+    src/sasat/dataSources/db/Bonus.ts:1:43:
+      1 │ ...onusDBDataSource } from "../../__generated__/dataSources/db/Bonus";
+        ╵                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/ItemBalance"
+
+    src/sasat/dataSources/db/ItemBalance.ts:1:49:
+      1 │ ...DataSource } from "../../__generated__/dataSources/db/ItemBalance";
+        ╵                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Debt"
+
+    src/sasat/dataSources/db/Debt.ts:1:42:
+      1 │ ...dDebtDBDataSource } from "../../__generated__/dataSources/db/Debt";
+        ╵                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Currency"
+
+    src/sasat/dataSources/db/Currency.ts:1:46:
+      1 │ ...yDBDataSource } from "../../__generated__/dataSources/db/Currency";
+        ╵                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+✘ [ERROR] Could not resolve "../../__generated__/dataSources/db/Season"
+
+    src/sasat/dataSources/db/Season.ts:1:44:
+      1 │ ...sonDBDataSource } from "../../__generated__/dataSources/db/Season";
+        ╵                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build finished: 92.91379100084305ms
+build started...
+build finished: 535.2988330125809ms
+build started...
+build finished: 377.864333987236ms

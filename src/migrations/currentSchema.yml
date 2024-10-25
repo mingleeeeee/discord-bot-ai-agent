@@ -1,0 +1,1616 @@
+tables:
+  - tableName: user
+    columns:
+      - autoIncrement: false
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: createdAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: createdAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: balance
+    columns:
+      - autoIncrement: false
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: true
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: id
+          parentColumn: id
+          parentFieldName: balance
+          parentTable: user
+          relation: OneOrZero
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: balance
+        defaultCurrentTimeStamp: false
+        fieldName: balance
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: updatedAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: updatedAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: true
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: debt
+    columns:
+      - autoIncrement: false
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: true
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: id
+          parentColumn: id
+          parentFieldName: debt
+          parentTable: user
+          relation: OneOrZero
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: balance
+        defaultCurrentTimeStamp: false
+        fieldName: balance
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: updatedAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: updatedAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: true
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+      - autoIncrement: false
+        columnName: borrowed
+        defaultCurrentTimeStamp: false
+        fieldName: borrowed
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: item
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: name
+        defaultCurrentTimeStamp: false
+        fieldName: name
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: description
+        defaultCurrentTimeStamp: false
+        fieldName: description
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: status
+        defaultCurrentTimeStamp: false
+        fieldName: status
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: createdAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: createdAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+      - autoIncrement: false
+        columnName: price
+        defaultCurrentTimeStamp: false
+        fieldName: price
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: balance
+        defaultCurrentTimeStamp: false
+        fieldName: balance
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: image
+        defaultCurrentTimeStamp: false
+        fieldName: image
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: maxiumPerPesron
+        defaultCurrentTimeStamp: false
+        fieldName: maxiumPerPesron
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: reset
+        defaultCurrentTimeStamp: false
+        fieldName: reset
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: itemBalance
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: itemId
+        defaultCurrentTimeStamp: false
+        fieldName: itemId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: itemId
+          parentColumn: id
+          parentFieldName: itemBalance
+          parentTable: item
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: userId
+        defaultCurrentTimeStamp: false
+        fieldName: userId
+        hasReference: true
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: userId
+          parentColumn: id
+          parentFieldName: itemBalance
+          parentTable: user
+          relation: Many
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: balance
+        defaultCurrentTimeStamp: false
+        fieldName: balance
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: updatedAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: updatedAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: true
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: currency
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: symbol
+        defaultCurrentTimeStamp: false
+        fieldName: symbol
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: createdAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: createdAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: taskType
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: type
+        defaultCurrentTimeStamp: false
+        fieldName: type
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: repetitive
+        defaultCurrentTimeStamp: false
+        fieldName: repetitive
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: reward
+        defaultCurrentTimeStamp: false
+        fieldName: reward
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: createdAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: createdAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: loginTask
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: loginTask
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: duration
+        defaultCurrentTimeStamp: false
+        fieldName: duration
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: startAt
+        defaultCurrentTimeStamp: false
+        fieldName: startAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: endAt
+        defaultCurrentTimeStamp: false
+        fieldName: endAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: channelId
+        defaultCurrentTimeStamp: false
+        fieldName: channelId
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: discordPostTask
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: discordPostTask
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: includedString
+        defaultCurrentTimeStamp: false
+        fieldName: includedString
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: channelId
+        defaultCurrentTimeStamp: false
+        fieldName: channelId
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: xRetweetTask
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: xRetweetTask
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: tweetId
+        defaultCurrentTimeStamp: false
+        fieldName: tweetId
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: deadline
+        defaultCurrentTimeStamp: false
+        fieldName: deadline
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: xLikeTask
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: xLikeTask
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: tweetId
+        defaultCurrentTimeStamp: false
+        fieldName: tweetId
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: deadline
+        defaultCurrentTimeStamp: false
+        fieldName: deadline
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: robTask
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: robTask
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: duration
+        defaultCurrentTimeStamp: false
+        fieldName: duration
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: penalty
+        defaultCurrentTimeStamp: false
+        fieldName: penalty
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: winRate
+        defaultCurrentTimeStamp: false
+        fieldName: winRate
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: stolenRole
+        defaultCurrentTimeStamp: false
+        fieldName: stolenRole
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: crimeTask
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: crimeTask
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: duration
+        defaultCurrentTimeStamp: false
+        fieldName: duration
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: penalty
+        defaultCurrentTimeStamp: false
+        fieldName: penalty
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: winRate
+        defaultCurrentTimeStamp: false
+        fieldName: winRate
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: completedTaskUser
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: completedTaskUser
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: completedTaskId
+        defaultCurrentTimeStamp: false
+        fieldName: completedTaskId
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: userId
+        defaultCurrentTimeStamp: false
+        fieldName: userId
+        hasReference: true
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: userId
+          parentColumn: id
+          parentFieldName: completedTaskUser
+          parentTable: user
+          relation: Many
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: completedAt
+        defaultCurrentTimeStamp: false
+        fieldName: completedAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: taskTargetRole
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: taskTargetRole
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: role
+        defaultCurrentTimeStamp: false
+        fieldName: role
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: bonus
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: taskTypeId
+        defaultCurrentTimeStamp: false
+        fieldName: taskTypeId
+        hasReference: true
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        reference:
+          columnName: taskTypeId
+          parentColumn: id
+          parentFieldName: bonus
+          parentTable: taskType
+          relation: Many
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: bonusTaskId
+        defaultCurrentTimeStamp: false
+        fieldName: bonusTaskId
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: amount
+        defaultCurrentTimeStamp: false
+        fieldName: amount
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: startAt
+        defaultCurrentTimeStamp: false
+        fieldName: startAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: endAt
+        defaultCurrentTimeStamp: false
+        fieldName: endAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: miniGame
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: name
+        defaultCurrentTimeStamp: false
+        fieldName: name
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: winRate
+        defaultCurrentTimeStamp: false
+        fieldName: winRate
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: maxDebt
+        defaultCurrentTimeStamp: false
+        fieldName: maxDebt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: maxBet
+        defaultCurrentTimeStamp: false
+        fieldName: maxBet
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: minBet
+        defaultCurrentTimeStamp: false
+        fieldName: minBet
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: season
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: name
+        defaultCurrentTimeStamp: false
+        fieldName: name
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: startBalance
+        defaultCurrentTimeStamp: false
+        fieldName: startBalance
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: nextStartBalance
+        defaultCurrentTimeStamp: false
+        fieldName: nextStartBalance
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: duration
+        defaultCurrentTimeStamp: false
+        fieldName: duration
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: startAt
+        defaultCurrentTimeStamp: false
+        fieldName: startAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: endAt
+        defaultCurrentTimeStamp: false
+        fieldName: endAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: status
+        defaultCurrentTimeStamp: false
+        fieldName: status
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: createdAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: createdAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: seasonReservation
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: startAt
+        defaultCurrentTimeStamp: false
+        fieldName: startAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: createdAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: createdAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: serialCode
+    columns:
+      - autoIncrement: false
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: code
+        defaultCurrentTimeStamp: false
+        fieldName: code
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: createdAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: createdAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []
+  - tableName: seasonStopReservation
+    columns:
+      - autoIncrement: true
+        columnName: id
+        defaultCurrentTimeStamp: false
+        fieldName: id
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        signed: false
+        type: int
+        zerofill: false
+      - autoIncrement: false
+        columnName: stopAt
+        defaultCurrentTimeStamp: false
+        fieldName: stopAt
+        hasReference: false
+        length: 255
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: true
+        type: varchar
+        zerofill: false
+      - autoIncrement: false
+        columnName: updatedAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: updatedAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: true
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+      - autoIncrement: false
+        columnName: createdAt
+        default: CURRENT_TIMESTAMP
+        defaultCurrentTimeStamp: true
+        fieldName: createdAt
+        hasReference: false
+        notNull: true
+        onUpdateCurrentTimeStamp: false
+        option:
+          autoIncrementHashId: false
+          updatable: false
+        type: timestamp
+        zerofill: false
+    gqlOption:
+      enabled: false
+      mutations: []
+      queries: []
+    indexes: []
+    primaryKey:
+      - id
+    uniqueKeys: []
+    virtualRelations: []

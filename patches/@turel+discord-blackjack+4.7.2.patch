@@ -1,0 +1,338 @@
+diff --git a/node_modules/@turel/discord-blackjack/src/collect.js b/node_modules/@turel/discord-blackjack/src/collect.js
+index fb2a942..083a72d 100644
+--- a/node_modules/@turel/discord-blackjack/src/collect.js
++++ b/node_modules/@turel/discord-blackjack/src/collect.js
+@@ -3,12 +3,15 @@ class Collect {
+     async buttonCollect(message, userId, yourcard, dealercard, DECK, options) {
+         let filter = async i => {
+             await i.deferUpdate()
+-            return ["discord-blackjack-hitbtn", "discord-blackjack-splitbtn", "discord-blackjack-standbtn", "discord-blackjack-ddownbtn", "discord-blackjack-cancelbtn", "discord-blackjack-insbtn", "discord-blackjack-noinsbtn"].includes(i.customId) && i.user.id === userId
++            // return ["discord-blackjack-hitbtn", "discord-blackjack-splitbtn", "discord-blackjack-standbtn", "discord-blackjack-ddownbtn", "discord-blackjack-cancelbtn", "discord-blackjack-insbtn", "discord-blackjack-noinsbtn"].includes(i.customId) && i.user.id === userId
++            return ["discord-blackjack-hitbtn", "discord-blackjack-splitbtn", "discord-blackjack-standbtn", "discord-blackjack-ddownbtn", "discord-blackjack-insbtn", "discord-blackjack-noinsbtn"].includes(i.customId) && i.user.id === userId
++
+         }
+         let result = await message.awaitMessageComponent({ filter, time: 30000 })
+             .then(async i => {
+                 switch (i.customId) {
+                     case "discord-blackjack-hitbtn": {
++                        console.log("hit")
+                         return this.hit(message, userId, yourcard, dealercard, DECK, options)
+                     }
+                     case "discord-blackjack-splitbtn": {
+@@ -20,9 +23,9 @@ class Collect {
+                     case "discord-blackjack-ddownbtn": {
+                         return this.doubledown(message, userId, yourcard, dealercard, DECK, options)
+                     }
+-                    case "discord-blackjack-cancelbtn": {
+-                        return this.cancel(message, userId, yourcard, dealercard, DECK, options)
+-                    }
++                    // case "discord-blackjack-cancelbtn": {
++                    //     return this.cancel(message, userId, yourcard, dealercard, DECK, options)
++                    // }
+                     case "discord-blackjack-insbtn": {
+                         return this.insurance(message, userId, yourcard, dealercard, DECK, options)
+                     }
+@@ -32,7 +35,6 @@ class Collect {
+                 }
+             })
+             .catch((e) => {
+-
+                 if (options.transition === "edit") {
+                     return {
+                         result: "TIMEOUT",
+@@ -57,7 +59,9 @@ class Collect {
+     }
+ 
+     async messageCollect(message, userId, yourcard, dealercard, DECK, options, filter1) {
+-        if (!filter1) filter1 = ["h", "hit", "s", "stand", "cancel"]
++        // if (!filter1) filter1 = ["h", "hit", "s", "stand", "cancel"]
++        if (!filter1) filter1 = ["h", "hit", "s", "stand"]
++
+         let filter = i => filter1.includes(i.content.toLowerCase()) && i.author.id === userId
+         let result = await message.channel.awaitMessages({ filter, max: 1, time: 30000, errors: ['time'] })
+             .then(async msg => {
+@@ -90,15 +94,18 @@ class Collect {
+                     return this.doubledown(message, userId, yourcard, dealercard, DECK, options)
+                 } else if (msg.content.toLowerCase().startsWith("s")) {
+                     return this.stand(message, userId, yourcard, dealercard, DECK, options)
+-                } else if (msg.content.toLowerCase() === "cancel") {
+-                    return this.cancel(message, userId, yourcard, dealercard, DECK, options)
+-                } else if (msg.content.toLowerCase() === "i") {
++                } 
++                // else if (msg.content.toLowerCase() === "cancel") {
++                //     return this.cancel(message, userId, yourcard, dealercard, DECK, options)
++                // } 
++                else if (msg.content.toLowerCase() === "i") {
+                     return this.insurance(message, userId, yourcard, dealercard, DECK, options)
+                 } else if (msg.content.toLowerCase() === "ni") {
+                     return this.noinsurance(message, userId, yourcard, dealercard, DECK, options)
+                 }
+             }).catch(e => {
+                 if (options.transition === "edit") {
++                    console.log("E")
+                     return {
+                         result: "TIMEOUT",
+                         method: "None",
+@@ -107,6 +114,7 @@ class Collect {
+                         message: message
+                     }
+                 } else if (options.transition === "delete") {
++                    console.log("F")
+                     message.delete()
+                     return {
+                         result: "TIMEOUT",
+@@ -171,10 +179,12 @@ class Collect {
+                 let standbtn = { label: "Stand", style: 1, custom_id: "discord-blackjack-standbtn", type: 2 }
+                 let ddownbtn = { label: "Double Down", style: 1, custom_id: "discord-blackjack-ddownbtn", type: 2 }
+                 let splitbtn = { label: "Split", style: 1, custom_id: "discord-blackjack-splitbtn", type: 2 }
+-                let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
++                // let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
+                 let row1 = { type: 1, components: [hitbtn, standbtn, ddownbtn] }
+-                let row2 = { type: 1, components: [cancelbtn] }
+-                let components = [row1, row2]
++                // let row2 = { type: 1, components: [cancelbtn] }
++                // let components = [row1, row2]
++                let components = [row1]
++
+                 if (options.transition === "edit") {
+                     if (options.commandType === "message") {
+                         message = await message.edit({ embeds: [embed], components })
+@@ -205,10 +215,12 @@ class Collect {
+                 let standbtn = { label: "Stand", style: 1, custom_id: "discord-blackjack-standbtn", type: 2 }
+                 let ddownbtn = { label: "Double Down", style: 1, custom_id: "discord-blackjack-ddownbtn", type: 2 }
+                 let splitbtn = { label: "Split", style: 1, custom_id: "discord-blackjack-splitbtn", type: 2 }
+-                let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
++                // let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
+                 let row1 = { type: 1, components: [hitbtn, standbtn, ddownbtn] }
+-                let row2 = { type: 1, components: [cancelbtn] }
+-                let components = [row1, row2]
++                // let row2 = { type: 1, components: [cancelbtn] }
++                // let components = [row1, row2]
++                let components = [row1]
++
+                 if (options.transition === "edit") {
+                     if (options.commandType === "message") {
+                         message = await message.edit({ embeds: [embed], components })
+@@ -1084,10 +1096,12 @@ class Collect {
+             let standbtn = { label: "Stand", style: 1, custom_id: "discord-blackjack-standbtn", type: 2 }
+             let ddownbtn = { label: "Double Down", style: 1, custom_id: "discord-blackjack-ddownbtn", type: 2 }
+             let splitbtn = { label: "Split", style: 1, custom_id: "discord-blackjack-splitbtn", type: 2 }
+-            let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
++            // let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
+             let row1 = { type: 1, components: [hitbtn, standbtn] }
+-            let row2 = { type: 1, components: [cancelbtn] }
+-            let components = [row1, row2]
++            // let row2 = { type: 1, components: [cancelbtn] }
++            // let components = [row1, row2]
++            let components = [row1]
++
+             while (components.length == 2 && components[0].components.length > 2) {
+                 components[0].components.pop()
+             }
+@@ -1126,10 +1140,12 @@ class Collect {
+             let standbtn = { label: "Stand", style: 1, custom_id: "discord-blackjack-standbtn", type: 2 }
+             let ddownbtn = { label: "Double Down", style: 1, custom_id: "discord-blackjack-ddownbtn", type: 2 }
+             let splitbtn = { label: "Split", style: 1, custom_id: "discord-blackjack-splitbtn", type: 2 }
+-            let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
++            // let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
+             let row1 = { type: 1, components: [hitbtn, standbtn] }
+-            let row2 = { type: 1, components: [cancelbtn] }
+-            let components = [row1, row2]
++            // let row2 = { type: 1, components: [cancelbtn] }
++            // let components = [row1, row2]
++            let components = [row1]
++
+             while (components.length == 2 && components[0].components.length > 2) {
+                 components[0].components.pop()
+             }
+@@ -1172,25 +1188,25 @@ class Collect {
+ 
+     }
+ 
+-    async cancel(message, userId, yourcard, dealercard, DECK, options) {
+-        if (options.transition === "edit") {
+-            return {
+-                result: "CANCEL",
+-                method: "None",
+-                ycard: yourcard,
+-                dcard: dealercard,
+-                message: message
+-            }
+-        } else {
+-            return {
+-                result: "CANCEL",
+-                method: "None",
+-                ycard: yourcard,
+-                dcard: dealercard
+-            }
+-        }
+-
+-    }
++    // async cancel(message, userId, yourcard, dealercard, DECK, options) {
++    //     if (options.transition === "edit") {
++    //         return {
++    //             result: "CANCEL",
++    //             method: "None",
++    //             ycard: yourcard,
++    //             dcard: dealercard,
++    //             message: message
++    //         }
++    //     } else {
++    //         return {
++    //             result: "CANCEL",
++    //             method: "None",
++    //             ycard: yourcard,
++    //             dcard: dealercard
++    //         }
++    //     }
++
++    // }
+ }
+ 
+ module.exports = Collect
+diff --git a/node_modules/@turel/discord-blackjack/src/index.js b/node_modules/@turel/discord-blackjack/src/index.js
+index f3eba46..0ab2d8e 100644
+--- a/node_modules/@turel/discord-blackjack/src/index.js
++++ b/node_modules/@turel/discord-blackjack/src/index.js
+@@ -30,7 +30,7 @@ const Collect = require("./collect")
+     * 
+     * // other code here
+ */
+-module.exports = async (message, options) =>
++module.exports = async (message,userBet, options) =>
+ {
+ 
+     /**
+@@ -44,10 +44,10 @@ module.exports = async (message, options) =>
+     if (!message) throw new Error("[MISSING_PARAMETER] The message or interaction parameter was not provided, was null or undefined.")
+ 
+     // check if message and commandInteraction aren't something made up
+-    if (
+-        !(message instanceof Discord.Message)
+-        && !checkExtends(Discord.CommandInteraction, message)) // checks if the message extends from CommandInteraction to allow for ChatInputCommandInteraction as well.
+-        throw new Error("[INVALID_PARAMATER] The message or interaction parameter provided is not valid.")
++    // if (
++    //     !(message instanceof Discord.Message)
++    //     && !checkExtends(Discord.CommandInteraction, message)) // checks if the message extends from CommandInteraction to allow for ChatInputCommandInteraction as well.
++    //     throw new Error("[INVALID_PARAMATER] The message or interaction parameter provided is not valid.")
+ 
+     // set all the options
+     if (!options) options = {} // if options were not provided, make an empty object
+@@ -68,11 +68,11 @@ module.exports = async (message, options) =>
+     }
+ 
+     // set what type the message is
+-    let commandType
+-    if (message instanceof Discord.Message)
+-        commandType = "message"
+-    else if (checkExtends(Discord.CommandInteraction, message)) // checks if the message extends a CommandInteraction instead of instance checking.
+-        commandType = "interaction"
++    let commandType="interaction"
++    // if (message instanceof Discord.Message)
++    //     commandType = "message"
++    // else if (checkExtends(Discord.CommandInteraction, message)) // checks if the message extends a CommandInteraction instead of instance checking.
++    //     commandType = "interaction"
+ 
+     options.commandType = commandType
+ 
+@@ -106,7 +106,7 @@ module.exports = async (message, options) =>
+     }
+ 
+     // check if the user is playing a game
+-    if (games.has(message.member.id))
++    if (games.has(message.user.id))
+     {
+         if (commandType === "message")
+         {
+@@ -146,6 +146,7 @@ module.exports = async (message, options) =>
+         content: "",
+         value: ""
+     }
++    let bet = userBet;
+ 
+     // set the decks
+     let DECK = [
+@@ -212,10 +213,10 @@ module.exports = async (message, options) =>
+     let splitbtn = { label: "Split", style: 1, custom_id: "discord-blackjack-splitbtn", type: 2 }
+     let insbtn = { label: "Insurance", style: 1, custom_id: "discord-blackjack-insbtn", type: 2 }
+     let noinsbtn = { label: "No Insurance", style: 4, custom_id: "discord-blackjack-noinsbtn", type: 2 }
+-    let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
++    // let cancelbtn = { label: "Cancel", style: 4, custom_id: "discord-blackjack-cancelbtn", type: 2 }
+ 
+     let row1 = { type: 1, components: [hitbtn, standbtn] }
+-    let row2 = { type: 1, components: [cancelbtn] }
++    // let row2 = { type: 1, components: [cancelbtn] }
+ 
+     shuffle(DECK)
+     shuffle(DECK)
+@@ -258,11 +259,13 @@ module.exports = async (message, options) =>
+     let insTieEmbed = { title: "It's a tie (paid insurance).", color: 0xFF0000, description: "", fields: [], author: { name: message.member.displayName, icon_url: message.member.user.displayAvatarURL() } }
+     let insPayEmbed = { title: "Insurance Payout!", color: 0x008800, description: "", fields: [], author: { name: message.member.displayName, icon_url: message.member.user.displayAvatarURL() } }
+     let timeoutEmbed = { title: "Time's up!", color: 0xFF0000, description: "You took more than 30 seconds to respond. The time is up and the game has canceled.", fields: [], author: { name: message.member.user.tag, icon_url: message.member.displayAvatarURL() } }
+-    let cancelEmbed = { title: "Game canceled.", color: 0xFF0000, description: "You decided to cancel your ongoing blackjack game.", fields: [], author: { name: message.member.displayName, icon_url: message.member.displayAvatarURL() } }
+-    let generalEmbed = normalEmbed === false ? options.normalEmbedContent : { title: "Blackjack", color: Math.floor(Math.random() * (0xffffff + 1)), fields: [{ name: "Your hand", value: "", inline: true }, { name: `Dealer's hand`, value: "", inline: true }], author: { name: message.member.displayName, icon_url: message.member.user.displayAvatarURL() } }
++    // let cancelEmbed = { title: "Game canceled.", color: 0xFF0000, description: "You decided to cancel your ongoing blackjack game.", fields: [], author: { name: message.member.displayName, icon_url: message.member.displayAvatarURL() } }
++    let generalEmbed = normalEmbed === false ? options.normalEmbedContent : { title: "Blackjack", color: Math.floor(Math.random() * (0xffffff + 1)), fields: [{ name: "Your hand", value: "", inline: true }, { name: `Dealer's hand`, value: "", inline: true }, { name: `Your bet`, value: bet, inline: false }], author: { name: message.member.displayName, icon_url: message.member.user.displayAvatarURL() } }
+ 
+     // set the filters
+-    let allFilter = ["h", "hit", "s", "stand", "cancel"]
++    // let allFilter = ["h", "hit", "s", "stand", "cancel"]
++    let allFilter = ["h", "hit", "s", "stand"]
++
+ 
+     if (yourcards[0].rank === yourcards[1].rank && yourcards[0].rank === "A")
+     {
+@@ -389,10 +392,14 @@ module.exports = async (message, options) =>
+     {
+         if (commandType === "message")
+         {
+-            return await msg.edit({ embeds: [reply], components: buttons ? [row1, row2] : [] })
++            // return await msg.edit({ embeds: [reply], components: buttons ? [row1, row2] : [] })
++            return await msg.edit({ embeds: [reply], components: buttons ? [row1] : [] })
++
+         } else
+         {
+-            return await message.editReply({ embeds: [reply], components: buttons ? [row1, row2] : [] })
++            // return await message.editReply({ embeds: [reply], components: buttons ? [row1, row2] : [] })
++            return await message.editReply({ embeds: [reply], components: buttons ? [row1] : [] })
++
+         }
+     }
+ 
+@@ -478,7 +485,7 @@ module.exports = async (message, options) =>
+             "INSURANCE WIN": insWinEmbed,
+             "INSURANCE LOSE": insLoseEmbed,
+             "INSURANCE TIE": insTieEmbed,
+-            "CANCEL": cancelEmbed,
++            // "CANCEL": cancelEmbed,
+             "TIMEOUT": timeoutEmbed
+         }
+ 
+diff --git a/node_modules/@turel/discord-blackjack/types/index.d.ts b/node_modules/@turel/discord-blackjack/types/index.d.ts
+index 33614b2..8351746 100644
+--- a/node_modules/@turel/discord-blackjack/types/index.d.ts
++++ b/node_modules/@turel/discord-blackjack/types/index.d.ts
+@@ -1,12 +1,13 @@
+ import { Message, Interaction, EmbedBuilder } from "discord.js";
+ 
+-declare function Main(message: Message | Interaction, options?: MainOptions): Promise<FinalResult>;
++declare function Main(message: Message | Interaction,userBet:number, options?: MainOptions): Promise<FinalResult>;
+ 
+ interface MainOptions
+ {
+     transition?: "edit" | "delete";
+     buttons?: boolean;
+     doubledown?: boolean;
++    insurance?: boolean;
+     split?: boolean;
+     resultEmbed?: boolean;
+     normalEmbed?: boolean;
+@@ -24,7 +25,7 @@ interface OptionEmojis
+ 
+ interface FinalResult
+ {
+-    result: 'None' | 'BLACKJACK' | 'LOSE' | 'TIE' | 'WIN';
++    result: 'None' | 'BLACKJACK' | 'LOSE' | 'TIE' | 'WIN' | 'DOUBLE WIN' | 'DOUBLE LOSE' | 'DOUBLE TIE' | 'SPLIT WIN-LOSE' | 'SPLIT LOSE-WIN' | 'SPLIT TIE-TIE' | 'SPLIT WIN-WIN' | 'SPLIT LOSE-LOSE' | 'SPLIT TIE-WIN' | 'SPLIT WIN-TIE' | 'SPLIT TIE-LOSE' | 'SPLIT LOSE-TIE' | 'SPLIT BLACKJACK-WIN' | 'SPLIT WIN-BLACKJACK' | 'SPLIT BLACKJACK-LOSE' | 'SPLIT LOSE-BLACKJACK' | 'SPLIT BLACKJACK-BLACKJACK' | 'SPLIT BLACKJACK-TIE' | 'SPLIT TIE-BLACKJACK' | 'SPLIT DOUBLE WIN-LOSE' | 'SPLIT DOUBLE LOSE-WIN' | 'SPLIT DOUBLE TIE-TIE' | 'SPLIT DOUBLE WIN-WIN' | 'SPLIT DOUBLE LOSE-LOSE' | 'SPLIT DOUBLE TIE-WIN' | 'SPLIT DOUBLE WIN-TIE' | 'SPLIT DOUBLE TIE-LOSE' | 'SPLIT DOUBLE LOSE-TIE' | 'SPLIT DOUBLE BLACKJACK-WIN' | 'SPLIT DOUBLE WIN-BLACKJACK' | 'SPLIT DOUBLE BLACKJACK-LOSE' | 'SPLIT DOUBLE LOSE-BLACKJACK' | 'SPLIT DOUBLE BLACKJACK-BLACKJACK' | 'SPLIT DOUBLE BLACKJACK-TIE' | 'SPLIT DOUBLE TIE-BLACKJACK' | 'SPLIT WIN-DOUBLE LOSE' | 'SPLIT LOSE-DOUBLE WIN' | 'SPLIT TIE-DOUBLE TIE' | 'SPLIT WIN-DOUBLE WIN' | 'SPLIT LOSE-DOUBLE LOSE' | 'SPLIT TIE-DOUBLE WIN' | 'SPLIT WIN-DOUBLE TIE' | 'SPLIT TIE-DOUBLE LOSE' | 'SPLIT LOSE-DOUBLE TIE' | 'SPLIT BLACKJACK-DOUBLE WIN' | 'SPLIT WIN-DOUBLE BLACKJACK' | 'SPLIT BLACKJACK-DOUBLE LOSE' | 'SPLIT LOSE-DOUBLE BLACKJACK' | 'SPLIT BLACKJACK-DOUBLE BLACKJACK' | 'SPLIT BLACKJACK-DOUBLE TIE' | 'SPLIT TIE-DOUBLE BLACKJACK' | 'SPLIT DOUBLE WIN-DOUBLE LOSE' | 'SPLIT DOUBLE LOSE-DOUBLE WIN' | 'SPLIT DOUBLE TIE-DOUBLE TIE' | 'SPLIT DOUBLE WIN-DOUBLE WIN' | 'SPLIT DOUBLE LOSE-DOUBLE LOSE' | 'SPLIT DOUBLE TIE-DOUBLE WIN' | 'SPLIT DOUBLE WIN-DOUBLE TIE' | 'SPLIT DOUBLE TIE-DOUBLE LOSE' | 'SPLIT DOUBLE LOSE-DOUBLE TIE' | 'SPLIT DOUBLE BLACKJACK-DOUBLE WIN' | 'SPLIT DOUBLE WIN-DOUBLE BLACKJACK' | 'SPLIT DOUBLE BLACKJACK-DOUBLE LOSE' | 'SPLIT DOUBLE LOSE-DOUBLE BLACKJACK' | 'SPLIT DOUBLE BLACKJACK-DOUBLE BLACKJACK' | 'SPLIT DOUBLE BLACKJACK-DOUBLE TIE' | 'SPLIT DOUBLE TIE-DOUBLE BLACKJACK' | 'INSURANCE PAYOUT' | 'INSURANCE WIN' | 'INSURANCE LOSE' | 'INSURANCE TIE' | 'CANCEL' | 'TIMEOUT';
+     method: string;
+     ycard: Array<Card>;
+     dcard: Array<Card>;
