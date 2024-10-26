@@ -67,184 +67,20 @@ const client = new Client({
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/////////////// Message Translation Part Implemented by Ming  //////////////////////////////////////////////////////////////////////
-// Handle messages, buttons and DB operation 
-client.on("messageCreate", async (message) => {
-  //console.log("Received message in channel:", message.channel.id); // Debugging log
-  console.log("Announcement channel:", process.env.ANNOUNCEMENT_CHANNEL_ID); // Debugging log
-
-  // Check if the message is from a bot
-  if (message.author.bot) return; // Exit if the message is from a bot
-
-  // Check if the message is in the correct channel
-  if (message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID) {
-    //console.log("Message is not in the announcement channel."); // Log message if not in the correct channel
-    return; // Exit if not in the target channel
-  }
-
-  const supportedLanguages = [
-    { code: "zh", name: "中文" },
-    { code: "en", name: "English" },
-    { code: "fr", name: "Français" },
-    { code: "de", name: "Deutsch" },
-    { code: "hi", name: "हिन्दी" },
-    { code: "it", name: "Italiano" },
-    { code: "ar", name: "العربية" },
-    { code: "ja", name: "日本語" },
-    { code: "ko", name: "한국어" },
-    { code: "pt", name: "Português" },
-    { code: "ru", name: "Русский" },
-    { code: "es", name: "Español" },
-  ];
-  
-  // Store translations in the database
-  const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
-
-  try {
-    const translations: { [key: string]: string } = {};
-    for (const lang of supportedLanguages) {
-      const translatedText = await translateMessage(message.content, lang.code); // Translate function
-      translations[lang.code] = translatedText;
-      const params = {
-        TableName: "TranslatedMessages",
-        Item: {
-          MessageID: { S: message.id },
-          Translations: { 
-            M: Object.fromEntries(
-              Object.entries(translations).map(([key, value]) => [key, { S: value }])
-            )
-          }, // Store all translations in the map
-          OriginalMessage: { S: message.content },
-        },
-      };
-
-      await dbClient.send(new PutItemCommand(params)); // Save translation to DynamoDB
-      console.log(`Translation saved for ${message.id}, ${lang.code}: "${translatedText}"`); // Log success
-    }
-
-    // Add the "Translate" button
-    const translateButton = new ButtonBuilder()
-      .setCustomId(`translate-button-${message.id}`)
-      .setLabel("Translate")
-      .setStyle(ButtonStyle.Primary);
-
-    const buttonRow = new ActionRowBuilder<ButtonBuilder>().addComponents(translateButton);
-
-    //Reply with the Translate button
-    await message.reply({
-      content: "Click the button to translate the message:",
-      components: [buttonRow],
-    });
-
-  } catch (error) {
-    console.error("Error:", error); // Log any errors
-  }
-});
-
-// Handle button interaction for translation buttons
-client.on("interactionCreate", async (interaction) => {
-  if (!interaction.isButton()) return; // Exit if interaction is not a button
-
-  const customId = interaction.customId;
-  if (customId.startsWith("translate-button-")) {
-    // Show translation buttons after the "Translate" button is clicked
-    const supportedLanguages = [
-      { code: "zh", name: "中文" },
-      { code: "en", name: "English" },
-      { code: "fr", name: "Français" },
-      { code: "de", name: "Deutsch" },
-      { code: "hi", name: "हिन्दी" },
-      { code: "it", name: "Italiano" },
-      { code: "ar", name: "العربية" },
-      { code: "ja", name: "日本語" },
-      { code: "ko", name: "한국어" },
-      { code: "pt", name: "Português" },
-      { code: "ru", name: "Русский" },
-      { code: "es", name: "Español" },
-    ];
-    const messageId = customId.split('-')[2];
-    // Create language buttons
-    const buttonRows = supportedLanguages.map(lang => 
-      new ButtonBuilder()
-        .setCustomId(`translate-${lang.code}-${messageId}`)
-        .setLabel(lang.name)
-        .setStyle(ButtonStyle.Secondary)
-    );
-
-    // Split buttons into rows (max 5 per row)
-    const components = [];
-    for (let i = 0; i < buttonRows.length; i += 5) {
-      components.push(new ActionRowBuilder<ButtonBuilder>().addComponents(buttonRows.slice(i, i + 5)));
-    }
-
-    await interaction.reply({
-      content: "Select a language to translate the message:",
-      components: components,
-    });
-  } else if (customId.startsWith("translate-")) {
-    const [_, langCode, messageId] = customId.split("-"); // Extract language code and message ID
-    // Dynamodb client
-    const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
-    const params = {
-      TableName: "TranslatedMessages",
-      Key: {
-        MessageID: { S: messageId }, // Replace messageId with the ID of the message you want to fetch
-      },
-    };
-
-    try {
-      console.log("Fetching translation for MessageID:", messageId); // Log MessageID being fetched
-      const result = await dbClient.send(new GetItemCommand(params)); // Retrieve the item from the database
-      
-      if (result.Item) {
-        // Successfully fetched item
-        const item = result.Item;
-        if (item.Translations && item.Translations.M) {
-          const translations = item.Translations.M; // Assuming Translations is stored as a map
-          //console.log("Fetched translations:", translations); //Show DB result
-     
-          const translationForLang = translations[langCode]?.S; // Get translation for the specific language code
-          if (translationForLang) {
-            console.log(`Database - ${langCode}:`, translationForLang);
-            await interaction.reply({
-              content: translationForLang, // Display the translation
-              ephemeral: true
-            });
-          } else {
-            console.log("Translation not found for this language.");
-            await interaction.reply({ content: "Translation not found for this language." ,ephemeral: true});
-          }
-        } else {
-          console.log("No translations found.");
-          await interaction.reply({ content: "No translations found.",ephemeral: true });
-        }
-      } else {
-        console.log("Item not found in the database.");
-        await interaction.reply({ content: "Message not found in database." ,ephemeral: true});
-      }
-    } catch (error) {
-      console.error("Error fetching translation:", error);
-      await interaction.reply({ content: "Error occurred while fetching the translation.",ephemeral: true });
-    }
-  }
-});
-
-
-
-// /////////////// Message Translation Part Implemented by Ming  //////////////////////////////////////////////////////////////////////
+// /////////////// Message Translation Part Implemented by Ming (Translation Button) //////////////////////////////////////////////////////////////////////
 // // Handle messages, buttons and DB operation 
 // client.on("messageCreate", async (message) => {
-//   console.log("Received message in channel:", message.channel.id); // Debugging log
-//   console.log("Expected channel:", process.env.ANNOUNCEMENT_CHANNEL_ID); // Debugging log
+//   //console.log("Received message in channel:", message.channel.id); // Debugging log
+//   console.log("Announcement channel:", process.env.ANNOUNCEMENT_CHANNEL_ID); // Debugging log
 
 //   // Check if the message is from a bot
 //   if (message.author.bot) return; // Exit if the message is from a bot
 
 //   // Check if the message is in the correct channel
 //   if (message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID) {
-//     console.log("Message is not in the announcement channel."); // Log message if not in the correct channel
+//     //console.log("Message is not in the announcement channel."); // Log message if not in the correct channel
 //     return; // Exit if not in the target channel
 //   }
 
@@ -262,15 +98,16 @@ client.on("interactionCreate", async (interaction) => {
 //     { code: "ru", name: "Русский" },
 //     { code: "es", name: "Español" },
 //   ];
-//    // Store translations in the database
-//    const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
+  
+//   // Store translations in the database
+//   const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
 
-//    try {
+//   try {
 //     const translations: { [key: string]: string } = {};
-//      for (const lang of supportedLanguages) {
-//        const translatedText = await translateMessage(message.content, lang.code); // Translate function
-//        translations[lang.code] = translatedText;
-//        const params = {
+//     for (const lang of supportedLanguages) {
+//       const translatedText = await translateMessage(message.content, lang.code); // Translate function
+//       translations[lang.code] = translatedText;
+//       const params = {
 //         TableName: "TranslatedMessages",
 //         Item: {
 //           MessageID: { S: message.id },
@@ -282,101 +119,264 @@ client.on("interactionCreate", async (interaction) => {
 //           OriginalMessage: { S: message.content },
 //         },
 //       };
- 
-//        await dbClient.send(new PutItemCommand(params)); // Save translation to DynamoDB
-//        console.log(`Translation saved for ${lang.code}: "${translatedText}"`); // Log success
-//      }
-   
-//   // Add translation buttons to the message
-//   const buttonRows = supportedLanguages.map(lang => 
-//     new ButtonBuilder()
-//       .setCustomId(`translate-${lang.code}-${message.id}`)
-//       .setLabel(lang.name)
-//       .setStyle(ButtonStyle.Secondary)
-//   );
 
-//   // Split buttons into rows (max 5 per row)
-//   const components = [];
-//   for (let i = 0; i < buttonRows.length; i += 5) {
-//     components.push(new ActionRowBuilder<ButtonBuilder>().addComponents(buttonRows.slice(i, i + 5)));
+//       await dbClient.send(new PutItemCommand(params)); // Save translation to DynamoDB
+//       console.log(`Translation saved for ${message.id}, ${lang.code}: "${translatedText}"`); // Log success
+//     }
+
+//     // Add the "Translate" button
+//     const translateButton = new ButtonBuilder()
+//       .setCustomId(`translate-button-${message.id}`)
+//       .setLabel("Translate")
+//       .setStyle(ButtonStyle.Primary);
+
+//     const buttonRow = new ActionRowBuilder<ButtonBuilder>().addComponents(translateButton);
+
+//     //Reply with the Translate button
+//     await message.reply({
+//       content: "Click the button to translate the message:",
+//       components: [buttonRow],
+//     });
+
+//   } catch (error) {
+//     console.error("Error:", error); // Log any errors
 //   }
-
-//   // Reply with the Translate buttons
-//   await message.reply({
-//     content: "Select a language to translate the message:",
-//     components: components,
-//   });
-
-// } catch (error) {
-//   console.error("Error:", error); // Log any errors
-// }
 // });
-
 
 // // Handle button interaction for translation buttons
 // client.on("interactionCreate", async (interaction) => {
 //   if (!interaction.isButton()) return; // Exit if interaction is not a button
 
 //   const customId = interaction.customId;
-//   if (!customId.startsWith("translate-")) return; // Only handle translation buttons
+//   if (customId.startsWith("translate-button-")) {
+//     // Show translation buttons after the "Translate" button is clicked
+//     const supportedLanguages = [
+//       { code: "zh", name: "中文" },
+//       { code: "en", name: "English" },
+//       { code: "fr", name: "Français" },
+//       { code: "de", name: "Deutsch" },
+//       { code: "hi", name: "हिन्दी" },
+//       { code: "it", name: "Italiano" },
+//       { code: "ar", name: "العربية" },
+//       { code: "ja", name: "日本語" },
+//       { code: "ko", name: "한국어" },
+//       { code: "pt", name: "Português" },
+//       { code: "ru", name: "Русский" },
+//       { code: "es", name: "Español" },
+//     ];
+//     const messageId = customId.split('-')[2];
+//     // Create language buttons
+//     const buttonRows = supportedLanguages.map(lang => 
+//       new ButtonBuilder()
+//         .setCustomId(`translate-${lang.code}-${messageId}`)
+//         .setLabel(lang.name)
+//         .setStyle(ButtonStyle.Secondary)
+//     );
 
-//   const [_, langCode, messageId] = customId.split("-"); // Extract language code and message ID
+//     // Split buttons into rows (max 5 per row)
+//     const components = [];
+//     for (let i = 0; i < buttonRows.length; i += 5) {
+//       components.push(new ActionRowBuilder<ButtonBuilder>().addComponents(buttonRows.slice(i, i + 5)));
+//     }
 
-//   // Defer the reply to prevent interaction timeout
-//   // if (!interaction.replied) {
-//   //   await interaction.deferReply({ ephemeral: true });
-//   // }
-//   // Dynamodb client
-//   const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
-//   const params = {
-//     TableName: "TranslatedMessages",
-//     Key: {
-//       MessageID: { S: messageId }, // Replace messageId with the ID of the message you want to fetch
-//     },
-//   };
+//     await interaction.reply({
+//       content: "Select a language to translate the message:",
+//       components: components,
+//     });
+//   } else if (customId.startsWith("translate-")) {
+//     const [_, langCode, messageId] = customId.split("-"); // Extract language code and message ID
+//     // Dynamodb client
+//     const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
+//     const params = {
+//       TableName: "TranslatedMessages",
+//       Key: {
+//         MessageID: { S: messageId }, // Replace messageId with the ID of the message you want to fetch
+//       },
+//     };
 
-//   try {
-//     const result = await dbClient.send(new GetItemCommand(params)); // Retrieve the item from the database
-  
-//     if (result.Item) {
-//       // Successfully fetched item
-//       const item = result.Item;
-//       if (item.Translations && item.Translations.M) {
-//         const translations = item.Translations.M; // Assuming Translations is stored as a map
-//         console.log("Fetched translations:", translations);
+//     try {
+//       console.log("Fetching translation for MessageID:", messageId); // Log MessageID being fetched
+//       const result = await dbClient.send(new GetItemCommand(params)); // Retrieve the item from the database
+      
+//       if (result.Item) {
+//         // Successfully fetched item
+//         const item = result.Item;
+//         if (item.Translations && item.Translations.M) {
+//           const translations = item.Translations.M; // Assuming Translations is stored as a map
+//           //console.log("Fetched translations:", translations); //Show DB result
      
-//         const translationForLang = translations[langCode]?.S; // Get translation for the specific language code
-//         if (translationForLang) {
-//           console.log(`Database - ${langCode}:`, translationForLang);
-
-          
-//           await interaction.reply({
-//             content: translationForLang, // Display the translation
-//             ephemeral: true
-//           });
-//           // Respond with the fetched translation
-//           // await interaction.editReply({
-//           //   content: translationForLang, // Display the translation
-//           // });
-          
+//           const translationForLang = translations[langCode]?.S; // Get translation for the specific language code
+//           if (translationForLang) {
+//             console.log(`Database - ${langCode}:`, translationForLang);
+//             await interaction.reply({
+//               content: translationForLang, // Display the translation
+//               ephemeral: true
+//             });
+//           } else {
+//             console.log("Translation not found for this language.");
+//             await interaction.reply({ content: "Translation not found for this language." ,ephemeral: true});
+//           }
 //         } else {
-//           console.log("Translation not found for this language.");
-//           await interaction.reply({ content: "Translation not found for this language." ,ephemeral: true});
-          
+//           console.log("No translations found.");
+//           await interaction.reply({ content: "No translations found.",ephemeral: true });
 //         }
 //       } else {
-//         console.log("No translations found.");
-//         await interaction.reply({ content: "No translations found.",ephemeral: true });
+//         console.log("Item not found in the database.");
+//         await interaction.reply({ content: "Message not found in database." ,ephemeral: true});
 //       }
-//     } else {
-//       console.log("Item not found in the database.");
-//       await interaction.reply({ content: "Message not found in database." ,ephemeral: true});
+//     } catch (error) {
+//       console.error("Error fetching translation:", error);
+//       await interaction.reply({ content: "Error occurred while fetching the translation.",ephemeral: true });
 //     }
-//   } catch (error) {
-//     console.error("Error fetching translation:", error);
-//     await interaction.reply({ content: "Error occurred while fetching the translation.",ephemeral: true });
 //   }
 // });
+
+
+
+/////////////// Message Translation Part Implemented by Ming (Without translation button)  //////////////////////////////////////////////////////////////////////
+// Handle messages, buttons and DB operation 
+client.on("messageCreate", async (message) => {
+  console.log("Received message in channel:", message.channel.id); // Debugging log
+  console.log("Expected channel:", process.env.ANNOUNCEMENT_CHANNEL_ID); // Debugging log
+
+  // Check if the message is from a bot
+  if (message.author.bot) return; // Exit if the message is from a bot
+
+  // Check if the message is in the correct channel
+  if (message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID) {
+    console.log("Message is not in the announcement channel."); // Log message if not in the correct channel
+    return; // Exit if not in the target channel
+  }
+
+  const supportedLanguages = [
+    { code: "zh", name: "中文" },
+    { code: "en", name: "English" },
+    { code: "fr", name: "Français" },
+    { code: "de", name: "Deutsch" },
+    { code: "hi", name: "हिन्दी" },
+    { code: "it", name: "Italiano" },
+    { code: "ar", name: "العربية" },
+    { code: "ja", name: "日本語" },
+    { code: "ko", name: "한국어" },
+    { code: "pt", name: "Português" },
+    { code: "ru", name: "Русский" },
+    { code: "es", name: "Español" },
+  ];
+   // Store translations in the database
+   const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
+
+   try {
+    const translations: { [key: string]: string } = {};
+     for (const lang of supportedLanguages) {
+       const translatedText = await translateMessage(message.content, lang.code); // Translate function
+       translations[lang.code] = translatedText;
+       const params = {
+        TableName: "TranslatedMessages",
+        Item: {
+          MessageID: { S: message.id },
+          Translations: { 
+            M: Object.fromEntries(
+              Object.entries(translations).map(([key, value]) => [key, { S: value }])
+            )
+          }, // Store all translations in the map
+          OriginalMessage: { S: message.content },
+        },
+      };
+ 
+       await dbClient.send(new PutItemCommand(params)); // Save translation to DynamoDB
+       console.log(`Translation saved for ${lang.code}: "${translatedText}"`); // Log success
+     }
+   
+  // Add translation buttons to the message
+  const buttonRows = supportedLanguages.map(lang => 
+    new ButtonBuilder()
+      .setCustomId(`translate-${lang.code}-${message.id}`)
+      .setLabel(lang.name)
+      .setStyle(ButtonStyle.Secondary)
+  );
+
+  // Split buttons into rows (max 5 per row)
+  const components = [];
+  for (let i = 0; i < buttonRows.length; i += 5) {
+    components.push(new ActionRowBuilder<ButtonBuilder>().addComponents(buttonRows.slice(i, i + 5)));
+  }
+
+  // Reply with the Translate buttons
+  await message.reply({
+    content: "Select a language to translate the message:",
+    components: components,
+  });
+
+} catch (error) {
+  console.error("Error:", error); // Log any errors
+}
+});
+
+
+// Handle button interaction for translation buttons
+client.on("interactionCreate", async (interaction) => {
+  if (!interaction.isButton()) return; // Exit if interaction is not a button
+
+  const customId = interaction.customId;
+  if (!customId.startsWith("translate-")) return; // Only handle translation buttons
+
+  const [_, langCode, messageId] = customId.split("-"); // Extract language code and message ID
+
+  // Defer the reply to prevent interaction timeout
+  // if (!interaction.replied) {
+  //   await interaction.deferReply({ ephemeral: true });
+  // }
+  // Dynamodb client
+  const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
+  const params = {
+    TableName: "TranslatedMessages",
+    Key: {
+      MessageID: { S: messageId }, // Replace messageId with the ID of the message you want to fetch
+    },
+  };
+
+  try {
+    const result = await dbClient.send(new GetItemCommand(params)); // Retrieve the item from the database
+  
+    if (result.Item) {
+      // Successfully fetched item
+      const item = result.Item;
+      if (item.Translations && item.Translations.M) {
+        const translations = item.Translations.M; // Assuming Translations is stored as a map
+        console.log("Fetched translations:", translations);
+     
+        const translationForLang = translations[langCode]?.S; // Get translation for the specific language code
+        if (translationForLang) {
+          console.log(`Database - ${langCode}:`, translationForLang);
+
+          
+          await interaction.reply({
+            content: translationForLang, // Display the translation
+            ephemeral: true
+          });
+          // Respond with the fetched translation
+          // await interaction.editReply({
+          //   content: translationForLang, // Display the translation
+          // });
+          
+        } else {
+          console.log("Translation not found for this language.");
+          await interaction.reply({ content: "Translation not found for this language." ,ephemeral: true});
+          
+        }
+      } else {
+        console.log("No translations found.");
+        await interaction.reply({ content: "No translations found.",ephemeral: true });
+      }
+    } else {
+      console.log("Item not found in the database.");
+      await interaction.reply({ content: "Message not found in database." ,ephemeral: true});
+    }
+  } catch (error) {
+    console.error("Error fetching translation:", error);
+    await interaction.reply({ content: "Error occurred while fetching the translation.",ephemeral: true });
+  }
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // https://discord.js.org/#/docs/discord.js/main/general/welcome
