@@ -113,7 +113,7 @@ const execute: Command = async (interaction: ChatInputCommandInteraction):Promis
     // Check if the command is used in the correct channel
     if (interaction.channelId !== process.env.ASK_AI_CHANNEL_ID ) {
        await interaction.reply({
-        content: "This command can only be used in the designated channel.",
+        content: "This command can only be used in the ai-chat-bot channel.",
         ephemeral: true // Optional: makes the reply visible only to the user
       });
       return;
