@@ -243,10 +243,16 @@ client.on("messageCreate", async (message) => {
   if (message.author.bot) return; // Exit if the message is from a bot
 
   // Check if the message is in the correct channel
-  if (message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID) {
+  if (message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID1 && message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID2 &&
+    message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID3 && message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID4&& 
+    message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID5 && message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID6 &&
+    message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID7 && message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID8 &&
+    message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID9 && message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID10 && 
+    message.channel.id !== process.env.ANNOUNCEMENT_CHANNEL_ID11 ) {
     console.log("Message is not in the announcement channel."); // Log message if not in the correct channel
     return; // Exit if not in the target channel
   }
+
 
   const supportedLanguages = [
     { code: "zh", name: "中文" },

@@ -107,9 +107,19 @@ const handleGptResponse = async (interaction: ChatInputCommandInteraction, query
 };
 
 // Define the command's execute function
-const execute: Command = async (interaction: ChatInputCommandInteraction) => {
+const execute: Command = async (interaction: ChatInputCommandInteraction):Promise<void>  => {
   
   try {
+    // Check if the command is used in the correct channel
+    if (interaction.channelId !== process.env.ASK_AI_CHANNEL_ID ) {
+       await interaction.reply({
+        content: "This command can only be used in the designated channel.",
+        ephemeral: true // Optional: makes the reply visible only to the user
+      });
+      return;
+    }
+
+
     const query = interaction.options.getString('query') || '';
     // Load all content from S3 RAG folder
     const allContent = await loadAllContentFromRAG();
