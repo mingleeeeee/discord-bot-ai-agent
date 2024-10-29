@@ -2,13 +2,13 @@ import { SlashCommandBuilder, ChatInputCommandInteraction } from "discord.js";
 import { Command } from "@/commands/commands";
 import OpenAI from 'openai';
 import { S3Client, ListObjectsV2Command, GetObjectCommand } from '@aws-sdk/client-s3';
+import { DynamoDBClient,GetItemCommand,PutItemCommand,QueryCommand } from '@aws-sdk/client-dynamodb';
 import dotenv from 'dotenv';
 import { Readable } from 'stream';
 import { franc } from 'franc';
 
-
 dotenv.config();
-
+const dbClient = new DynamoDBClient({ region: "ap-northeast-1" });
 // Initialize AWS S3 client (v3)
 const s3 = new S3Client({
   region: process.env.AWS_REGION,
@@ -66,42 +66,72 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || '',
 });
 
-// Function to handle GPT response with enforced language
+
 const handleGptResponse = async (interaction: ChatInputCommandInteraction, query: string, context: string) => {
   try {
-    // Retrieve the user's locale
-    const userLocale = interaction.locale; // e.g., "en-US", "fr-FR"
+    const timestamp = new Date().toISOString();
+    const userId = interaction.user.id;
+    const userLocale = interaction.locale;
     console.log(`User's locale: ${userLocale}`);
-   // Query 
-   console.log(`Query: ${query}`)
-   // Create the prompt with the dynamic language instructions
-   const prompt = `You should answer in this language: ${userLocale} based on this question: ${query}`;
-    // Defer the reply to prevent interaction timeout
-    await interaction.deferReply({ephemeral: true });
+    console.log(`Query: ${query}`);
 
-    // Make a request to OpenAI's chat completion API
+    // Defer the reply to prevent interaction timeout
+    await interaction.deferReply({ ephemeral: true });
+
+    // Initialize usage count to 1 and increment if previous records exist
+    let currentCount = 1;
+    try {
+      const getParams = {
+        TableName: "Test-Feedback-FAQ",
+        KeyConditionExpression: "UserID = :userId",
+        ExpressionAttributeValues: { ":userId": { S: userId } },
+        ProjectionExpression: "UsageCount",
+      };
+
+      const getResult = await dbClient.send(new QueryCommand(getParams));
+      if (getResult.Items && getResult.Items.length > 0) {
+        const maxUsageCount = Math.max(
+          ...getResult.Items.map(item => parseInt(item.UsageCount?.N || '0', 10))
+        );
+        currentCount = maxUsageCount + 1;
+      }
+    } catch (error) {
+      console.error("Error fetching user records:", error);
+    }
+
+    // Create the prompt and request to OpenAI
+    const prompt = `You should answer in this language: ${userLocale} based on this question: ${query}`;
     const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',  // Use GPT-4o model or another available model
+      model: 'gpt-4o',
       messages: [
-        { role: "system", content: `You should reply in this language in default unless user ask you to reply in other language: ${userLocale}You are a Discord bot helping users with questions related to the TokyoBeast based on the context below. \
-          You can only responed to questions related to this Tokyobeast, web3, blockchain, or topic related to this document.
-          Respond in the same language as the user's query. Here is the context from the provided documents: \n\n${context}` },
+        { role: "system", content: `Reply in this language unless requested otherwise: ${userLocale}. You are a Discord bot answering questions about TokyoBeast, web3, or related topics. Context:\n\n${context}` },
         { role: "user", content: prompt }
       ],
     });
 
-    // Extract the response text from the completion result
     const responseText = response.choices[0]?.message?.content || 'No response received from the model.';
+    await interaction.editReply({ content: responseText });
 
-    // Send the response back to the user
-    await interaction.editReply({ 
-      content: responseText });
+    // Store the new record in DynamoDB with incremented UsageCount
+    const dbParams = {
+      TableName: "Test-Feedback-FAQ",
+      Item: {
+        UserID: { S: userId },
+        Timestamp: { S: timestamp },
+        Query: { S: query },
+        Response: { S: responseText },
+        Locale: { S: interaction.locale },
+        UsageCount: { N: currentCount.toString() },
+      },
+    };
 
-  }
-   catch (error) {
+    await dbClient.send(new PutItemCommand(dbParams));
+    console.log(`New record stored for user: ${userId}, Usage Count: ${currentCount}, Query: ${query}, Response: ${responseText}`);
+
+  } catch (error) {
     console.error(error);
     await interaction.editReply({
-      content: 'Something went wrong while generating the response.'
+      content: 'Something went wrong while generating the response.',
     });
   }
 };
